@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+
+# Environment files (secrets — never commit)
+.env
+.env.local
+.env.*.local
+
+# Build artefacts
+.next
+dist
+*.tsbuildinfo
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
