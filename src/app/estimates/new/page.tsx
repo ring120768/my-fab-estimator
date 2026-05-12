@@ -108,7 +108,7 @@ export default function NewEstimatePage() {
             <div className="grid grid-cols-2 gap-4">
               <SelectField label="Material grade" value={spec.material_grade} onChange={(e) => setField("material_grade", e.target.value)} options={[{ value: "304", label: "304" }, { value: "316", label: "316" }]} />
               <NumberField label="Sheet thickness (mm)" step="0.1" value={spec.sheet_thickness_mm} onChange={(e) => setField("sheet_thickness_mm", Number(e.target.value))} />
-              <SelectField label="Finish" value={spec.finish} onChange={(e) => setField("finish", e.target.value as TableSpec["finish"])} options={[{ value: "mill", label: "Mill" }, { value: "brushed", label: "Brushed" }, { value: "polished", label: "Polished" }]} />
+              <SelectField label="Finish" value={spec.finish} onChange={(e) => setField("finish", e.target.value as TableSpec["finish"])} options={[{ value: "brushed", label: "Brushed" }, { value: "burnished", label: "Burnished" }, { value: "mirror", label: "Mirror" }]} hint="Mirror uses 2× labour rate" />
               <SelectField label="Construction" value={spec.construction} onChange={(e) => setField("construction", e.target.value as TableSpec["construction"])} options={[{ value: "welded", label: "Welded" }, { value: "bolted", label: "Bolted" }]} />
               <SelectField label="Leg type" value={spec.leg_type} onChange={(e) => setField("leg_type", e.target.value as TableSpec["leg_type"])} options={[{ value: "box_section", label: "Box section" }, { value: "tube", label: "Tube" }, { value: "angle", label: "Angle" }]} />
               <NumberField label="Number of legs" value={spec.number_of_legs} onChange={(e) => setField("number_of_legs", Number(e.target.value))} />

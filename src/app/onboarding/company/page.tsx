@@ -7,6 +7,7 @@ import { createCompanyForUser, getCurrentCompany } from "@/lib/supabase/data-acc
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
 import { TextField } from "@/components/Field";
+import { LogoFull } from "@/components/Logo";
 
 export default function OnboardingPage() {
   const router = useRouter();
@@ -41,11 +42,11 @@ export default function OnboardingPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-bg">
       <div className="w-full max-w-md">
+        <div className="flex justify-center mb-8">
+          <LogoFull className="h-28 w-auto" />
+        </div>
         <div className="text-center mb-6">
-          <div className="text-lg font-semibold text-ink">Welcome to My Fab Estimator</div>
-          <div className="text-xs text-muted mt-1">
-            One quick step before we get going.
-          </div>
+          <div className="text-base font-medium text-ink">Welcome — one quick step</div>
         </div>
         <Card title="Create your company">
           <p className="text-sm text-muted mb-4">

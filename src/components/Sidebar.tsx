@@ -4,12 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { LogoWithText } from "@/components/Logo";
 
 const links = [
   { href: "/", label: "Dashboard" },
   { href: "/costing-matrix", label: "Costing Matrix" },
-  { href: "/estimates/new", label: "New Estimate" },
-  { href: "/estimates", label: "Estimates" },
+  { href: "/quotes/new", label: "New Quote" },
+  { href: "/quotes/import", label: "Import from drawing" },
+  { href: "/quotes", label: "Quotes" },
+  { href: "/estimates/new", label: "New Estimate (legacy)" },
+  { href: "/estimates", label: "Estimates (legacy)" },
 ];
 
 export function Sidebar() {
@@ -49,10 +53,10 @@ export function Sidebar() {
 
   return (
     <aside className="no-print w-60 shrink-0 border-r border-border bg-panel min-h-screen flex flex-col">
-      <div className="px-5 py-6 border-b border-border">
-        <div className="text-sm font-semibold text-ink">My Fab Estimator</div>
+      <div className="px-4 py-5 border-b border-border">
+        <LogoWithText size="sm" />
         {companyName && (
-          <div className="text-xs text-muted mt-1 truncate">{companyName}</div>
+          <div className="text-xs text-muted mt-3 truncate">{companyName}</div>
         )}
       </div>
       <nav className="p-3 space-y-1 flex-1">

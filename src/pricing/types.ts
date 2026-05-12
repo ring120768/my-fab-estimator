@@ -6,7 +6,8 @@
 
 export type ConstructionType = "welded" | "bolted";
 export type LegType = "box_section" | "tube" | "angle";
-export type Finish = "mill" | "brushed" | "polished";
+/** The three finishes CCE actually sells. "Mirror" uses 2× labour rate. */
+export type Finish = "brushed" | "burnished" | "mirror";
 
 /** What the user enters in the estimate builder for one stainless steel table. */
 export interface TableSpec {

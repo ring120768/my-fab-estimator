@@ -3,8 +3,8 @@ import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My Fab Estimator",
-  description: "Stainless steel fabrication costing",
+  title: "My Fab Estimator — Quote faster. Protect your margin.",
+  description: "Multi-line stainless steel fabrication quoting for commercial kitchen and bar work.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

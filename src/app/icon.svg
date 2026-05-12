@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="60 20 460 440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="t" x1="120" y1="130" x2="430" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7F8FA"/>
+      <stop offset="0.42" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="d" x1="110" y1="260" x2="390" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6B7280"/>
+      <stop offset="0.45" stop-color="#111827"/>
+      <stop offset="1" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="l" x1="0" y1="0" x2="38" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1F2937"/>
+      <stop offset="0.5" stop-color="#94A3B8"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="b" x1="230" y1="42" x2="350" y2="162" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#0057C8"/>
+    </linearGradient>
+  </defs>
+  <rect x="145" y="226" width="32" height="150" rx="5" fill="url(#l)" stroke="#0F172A" stroke-width="3"/>
+  <rect x="390" y="226" width="32" height="150" rx="5" fill="url(#l)" stroke="#0F172A" stroke-width="3"/>
+  <path d="M154 296L386 230L422 252L190 322L154 296Z" fill="url(#d)" stroke="#0F172A" stroke-width="4"/>
+  <path d="M190 322L422 252V274L190 346V322Z" fill="#1F2937" stroke="#0F172A" stroke-width="4"/>
+  <path d="M154 296L190 322V346L154 320V296Z" fill="#475569" stroke="#0F172A" stroke-width="4"/>
+  <rect x="178" y="276" width="34" height="156" rx="5" fill="url(#l)" stroke="#0F172A" stroke-width="3"/>
+  <rect x="425" y="203" width="34" height="156" rx="5" fill="url(#l)" stroke="#0F172A" stroke-width="3"/>
+  <path d="M90 172L390 86L496 146L193 241L90 172Z" fill="url(#t)" stroke="#64748B" stroke-width="4"/>
+  <path d="M193 241L496 146V176L193 275V241Z" fill="#94A3B8" stroke="#64748B" stroke-width="4"/>
+  <path d="M90 172L193 241V275L90 205V172Z" fill="#CBD5E1" stroke="#64748B" stroke-width="4"/>
+  <rect x="248" y="36" width="142" height="122" rx="16" fill="url(#b)"/>
+  <path d="M279 96L310 128L366 61" stroke="white" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
