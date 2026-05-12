@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
 import { Card, StatusChip } from "@/components/Card";
 import { Button } from "@/components/Button";
 import type { ParseResult, ParsedLineItem } from "@/lib/ai/types";
+import type { ReadinessCheck, ReadinessReport } from "@/app/api/check-readiness/route";
 
 export default function ImportSchedulePage() {
   const router = useRouter();
@@ -14,6 +16,21 @@ export default function ImportSchedulePage() {
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<ParseResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [readiness, setReadiness] = useState<ReadinessReport | null>(null);
+  const [readinessLoading, setReadinessLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch("/api/check-readiness");
+        if (res.ok) setReadiness(await res.json());
+      } catch {
+        // ignore — pre-flight is advisory; user can still attempt the upload
+      } finally {
+        setReadinessLoading(false);
+      }
+    })();
+  }, []);
 
   const onPick = (f: File | null) => {
     setFile(f);
@@ -59,6 +76,11 @@ export default function ImportSchedulePage() {
         description="Upload a CAD drawing with an equipment schedule. The AI extracts each line item, scores the quality, and either lets you continue into the quote builder or rejects with advice on what's missing."
       />
 
+      {/* Pre-flight readiness */}
+      {!result && readiness && !readiness.overall_ok && (
+        <ReadinessPanel report={readiness} />
+      )}
+
       {/* Upload box */}
       {!result && (
         <Card>
@@ -100,7 +122,14 @@ export default function ImportSchedulePage() {
             </div>
           </div>
 
-          <div className="mt-4 flex justify-end gap-2">
+          <div className="mt-4 flex items-center justify-between gap-2">
+            <div className="text-xs text-muted">
+              {readinessLoading
+                ? "Checking your account is ready…"
+                : readiness?.overall_ok
+                  ? "All systems ready — click Analyse to start."
+                  : "Account not fully ready — see warnings above. You can still try, but errors are likely."}
+            </div>
             <Button onClick={onAnalyse} disabled={!file || busy}>
               {busy ? "Analysing… (30–60 sec)" : "Analyse drawing"}
             </Button>
@@ -259,6 +288,45 @@ function ResultPanel({
           </div>
         </Card>
       )}
+    </div>
+  );
+}
+
+function ReadinessPanel({ report }: { report: ReadinessReport }) {
+  const failing = report.checks.filter((c) => !c.ok);
+  return (
+    <div className="rounded-lg border border-warn/40 bg-warn/5 p-4 mb-6">
+      <div className="flex items-start gap-3">
+        <span className="text-warn text-xl shrink-0">⚠</span>
+        <div className="flex-1">
+          <div className="font-semibold text-ink text-sm">
+            Your account isn&rsquo;t fully ready for drawing import
+          </div>
+          <div className="text-xs text-muted mt-1 mb-3">
+            {failing.length} of {report.checks.length} pre-flight checks failing. Fix these before
+            uploading, otherwise the AI parser will fail or the engine won&rsquo;t be able to price the
+            extracted line items.
+          </div>
+          <ul className="space-y-2">
+            {report.checks.map((c, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm">
+                <span className={c.ok ? "text-ok" : "text-bad"}>
+                  {c.ok ? "✓" : "✗"}
+                </span>
+                <div className="flex-1">
+                  <span className="font-medium text-ink">{c.label}</span>
+                  <span className="text-muted"> — {c.detail}</span>
+                  {!c.ok && c.fix_link && c.fix_label && (
+                    <Link href={c.fix_link} className="text-accent underline ml-2 text-xs">
+                      {c.fix_label}
+                    </Link>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
