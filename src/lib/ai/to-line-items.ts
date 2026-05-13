@@ -115,7 +115,15 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
       number_of_legs: 4,
       leg_section_mm: 30,
     };
-    return { spec, features: [], subcomponents: [], quantity: qty };
+    // Use the AI's original description text as the customer-facing line text
+    // so estimators can see what was extracted alongside any auto-generated text.
+    return {
+      spec,
+      features: [],
+      subcomponents: [],
+      quantity: qty,
+      description_override: item.description,
+    };
   }
 
   // Worktop

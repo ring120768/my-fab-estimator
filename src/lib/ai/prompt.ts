@@ -58,6 +58,28 @@ For each row in the schedule:
      with void", "ambient cupboard with hinged door", etc.
    - Material: "16swg" → swg, "304 grade" → grade, "brushed finish" → finish
 
+4b. SCALE-AWARE DIMENSION ESTIMATION
+    If the schedule description does NOT include explicit dimensions but the
+    drawing has a scale (e.g. "1:25", "1:50") and a visible plan view, you may
+    ESTIMATE length × depth from visual proportions on the plan. Use these
+    standard real-world reference dimensions to calibrate:
+      • Typical bench / counter / sink unit height = 900 mm
+      • Typical dishwash table height = 850 mm
+      • Typical worktop depth = 700 mm (650-800 range)
+      • Typical wall shelf depth = 300 mm
+      • Typical hot-cupboard depth = 700 mm
+      • Typical splashback height covered = 500-600 mm
+      • Standard sheet size = 2000×1000 mm or 2500×1250 mm
+
+    When you estimate (rather than read directly from the schedule):
+      - Set suggested_spec.length_mm and depth_mm to your visual estimate
+      - Round to the nearest 50mm
+      - Add "dimensions_estimated_from_plan" to missing_fields
+      - Drop the item's confidence by 15 points (so a 95% item becomes 80%
+        if dimensions were estimated rather than read)
+    If no plan view is visible OR no scale is given, leave dimensions undefined
+    and add "dimensions not stated" to missing_fields as before.
+
 5. For each item, report:
    - confidence (0-100): how sure you are in your classification + spec extraction
    - missing_fields: list specific missing information ("dimensions not stated",

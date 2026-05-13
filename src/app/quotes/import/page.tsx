@@ -168,6 +168,23 @@ function ResultPanel({
   const acceptable = assessment.acceptable;
   const score = assessment.quality_score;
 
+  // How many items had dimensions estimated visually from the plan vs read
+  // from the schedule vs missing entirely?
+  const estimatedCount = (schedule?.line_items ?? []).filter((l) =>
+    l.is_bespoke_fabrication &&
+    l.missing_fields.some((m) => m.includes("dimensions_estimated_from_plan") || m.includes("estimated"))
+  ).length;
+  const scheduledCount = (schedule?.line_items ?? []).filter((l) =>
+    l.is_bespoke_fabrication &&
+    l.suggested_spec?.length_mm &&
+    !l.missing_fields.some((m) => m.includes("dimensions"))
+  ).length;
+  const missingDimsCount = (schedule?.line_items ?? []).filter((l) =>
+    l.is_bespoke_fabrication &&
+    !l.suggested_spec?.length_mm
+  ).length;
+  const bespokeTotal = (schedule?.line_items ?? []).filter((l) => l.is_bespoke_fabrication).length;
+
   return (
     <div className="space-y-6">
       {/* Header — overall result */}
@@ -189,9 +206,13 @@ function ResultPanel({
           </div>
           <div className="flex flex-col gap-2 shrink-0">
             <Button onClick={onRetry} variant="secondary">Upload a different file</Button>
-            {acceptable && (
+            {acceptable ? (
               <Button onClick={onAccept}>Open in quote builder →</Button>
-            )}
+            ) : score >= 50 && schedule && schedule.line_items.length > 0 ? (
+              <Button onClick={onAccept} variant="secondary">
+                Continue anyway with warnings →
+              </Button>
+            ) : null}
           </div>
         </div>
 
@@ -239,6 +260,60 @@ function ResultPanel({
               </ul>
             </div>
           )}
+        </Card>
+      )}
+
+      {/* Dimensions choice — shown when any items have estimated or missing dims */}
+      {bespokeTotal > 0 && (estimatedCount > 0 || missingDimsCount > 0) && (
+        <Card title="Dimensions — your call">
+          <p className="text-sm text-muted mb-4">
+            {bespokeTotal} bespoke fabrication item{bespokeTotal === 1 ? "" : "s"} on this
+            drawing. Of those:
+          </p>
+          <div className="grid grid-cols-3 gap-3 text-sm mb-5">
+            <div className="rounded-md bg-ok/10 border border-ok/30 p-3">
+              <div className="text-xs text-ok font-medium">From schedule</div>
+              <div className="text-2xl font-semibold text-ink mt-1">{scheduledCount}</div>
+              <div className="text-xs text-muted mt-1">Read directly from item description text.</div>
+            </div>
+            <div className="rounded-md bg-warn/10 border border-warn/30 p-3">
+              <div className="text-xs text-warn font-medium">AI-estimated (±15–20%)</div>
+              <div className="text-2xl font-semibold text-ink mt-1">{estimatedCount}</div>
+              <div className="text-xs text-muted mt-1">Visual estimate from the scaled plan using a 900mm bench-height reference.</div>
+            </div>
+            <div className="rounded-md bg-bad/10 border border-bad/30 p-3">
+              <div className="text-xs text-bad font-medium">No data → default</div>
+              <div className="text-2xl font-semibold text-ink mt-1">{missingDimsCount}</div>
+              <div className="text-xs text-muted mt-1">Will use product-type defaults (e.g. 1800×700×900 for a bench).</div>
+            </div>
+          </div>
+
+          <div className="text-sm text-ink mb-3">How would you like to proceed?</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <button
+              onClick={onAccept}
+              className="text-left rounded-lg border border-accent bg-accent/5 hover:bg-accent/10 p-4 transition-colors"
+            >
+              <div className="font-medium text-ink">Trust AI estimates and continue →</div>
+              <div className="text-xs text-muted mt-1">
+                Proceed into the quote builder with the AI&rsquo;s extracted and estimated
+                dimensions. Each line item is editable — you can fix any size as you go.
+                Fastest path; expect ±15–20% accuracy on the estimated items.
+              </div>
+            </button>
+            <button
+              onClick={onRetry}
+              className="text-left rounded-lg border border-border bg-panel hover:bg-soft p-4 transition-colors"
+            >
+              <div className="font-medium text-ink">Revise the schedule first ↻</div>
+              <div className="text-xs text-muted mt-1">
+                Cancel this import. Update your CAD schedule to include explicit
+                dimensions (e.g. <em>&ldquo;approx. 2000mm × 700mm × 900mm&rdquo;</em> in
+                each item description), export a new PDF, then re-upload. Most accurate
+                path; gives you 95%+ confidence per item.
+              </div>
+            </button>
+          </div>
         </Card>
       )}
 
@@ -371,6 +446,14 @@ function LineRow({ item }: { item: ParsedLineItem }) {
     item.is_client_supplied ? "bg-warn/10 text-warn" :
     item.is_future_item ? "bg-warn/10 text-warn" : "bg-soft text-muted";
 
+  const dimsEstimated = item.missing_fields.some((m) =>
+    m.toLowerCase().includes("estimated")
+  );
+  const dimsMissing = item.is_bespoke_fabrication && !item.suggested_spec?.length_mm;
+  const dimsLength = item.suggested_spec?.length_mm;
+  const dimsDepth = item.suggested_spec?.depth_mm;
+  const dimsHeight = item.suggested_spec?.height_mm;
+
   return (
     <tr className="border-t border-border align-top">
       <td className="py-2 pr-3 font-medium">{item.item_no}</td>
@@ -384,8 +467,20 @@ function LineRow({ item }: { item: ParsedLineItem }) {
       </td>
       <td className="py-2 pr-3 max-w-md">
         <div className="text-ink">{item.description}</div>
-        {item.missing_fields.length > 0 && (
-          <div className="text-[10px] text-warn mt-1">⚠ {item.missing_fields.join(", ")}</div>
+        {item.is_bespoke_fabrication && (dimsLength || dimsDepth) && (
+          <div className="text-[11px] mt-1 flex items-center gap-1.5">
+            <span className={dimsEstimated ? "text-warn" : "text-ok"}>
+              {dimsEstimated ? "📐 estimated" : "✓ from schedule"}
+            </span>
+            <span className="text-muted">
+              {dimsLength ?? "?"}{dimsDepth ? " × " + dimsDepth : ""}{dimsHeight ? " × " + dimsHeight : ""} mm
+            </span>
+          </div>
+        )}
+        {dimsMissing && (
+          <div className="text-[11px] text-bad mt-1">
+            ⚠ no dimensions — defaults will apply, please verify
+          </div>
         )}
       </td>
       <td className="py-2 pr-3 text-right">

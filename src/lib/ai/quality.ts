@@ -108,23 +108,14 @@ export function assessQuality(schedule: ParsedSchedule): QualityAssessment {
   const bespoke_spec_completeness = bespokeCount === 0 ? 100 :
     Math.round(bespokeSpecScoreSum / bespokeCount);
 
-  // ---------- Critical blockers ----------
+  // ---------- Missing dimensions: warning only ----------
+  // CCE schedules typically don't include L×D×H — those are measured off the
+  // scaled floor plan. So we flag missing dims as a warning, not a blocker,
+  // and let the estimator fill them in in the quote builder.
   if (missingDimensionItems.length > 0) {
-    if (missingDimensionItems.length >= bespokeCount * 0.5) {
-      rejection_reasons.push(
-        `${missingDimensionItems.length} of ${bespokeCount} bespoke items have no dimensions in the schedule.`
-      );
-      advice.push(
-        "Bespoke fabrication items need length × depth × height specified in the schedule description. " +
-        "Please update the drawing to include these for items: " +
-        missingDimensionItems.slice(0, 10).join(", ") +
-        (missingDimensionItems.length > 10 ? ` and ${missingDimensionItems.length - 10} more.` : ".")
-      );
-    } else {
-      warnings.push(
-        `${missingDimensionItems.length} bespoke items missing dimensions — those line items will need manual sizing in the quote builder.`
-      );
-    }
+    warnings.push(
+      `${missingDimensionItems.length} of ${bespokeCount} bespoke items have no dimensions in the schedule — they'll be flagged in the quote builder for you to fill in (measure off the plan).`
+    );
   }
 
   if (missingQuantityItems.length > 0) {
@@ -138,11 +129,13 @@ export function assessQuality(schedule: ParsedSchedule): QualityAssessment {
   }
 
   // ---------- Overall score ----------
-  // Weighted: metadata 20%, line-item completeness 40%, bespoke specs 40%
+  // Weighted: metadata 25%, line-item completeness 50%, bespoke specs 25%.
+  // Bespoke specs (dimensions) weighted lower because they're commonly measured
+  // off the scaled plan in CCE workflow rather than written into the schedule.
   const quality_score = Math.round(
-    metadata_completeness * 0.2 +
-    line_item_completeness * 0.4 +
-    bespoke_spec_completeness * 0.4
+    metadata_completeness * 0.25 +
+    line_item_completeness * 0.5 +
+    bespoke_spec_completeness * 0.25
   );
 
   const acceptable =
