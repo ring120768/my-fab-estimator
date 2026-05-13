@@ -109,16 +109,23 @@ export async function GET() {
   });
 
   // 5. Costing rules — Postgres numeric returns as string, parse explicitly.
+  // VAT lives on companies, not costing_rules.
   const { data: rules, error: rulesErr } = await supabase
     .from("costing_rules")
-    .select("default_margin_percentage, vat_rate, pricing_method")
+    .select("default_margin_percentage, pricing_method")
     .eq("company_id", company_id)
+    .maybeSingle();
+  const { data: companyRow } = await supabase
+    .from("companies")
+    .select("vat_rate, vat_registered")
+    .eq("id", company_id)
     .maybeSingle();
   const marginNum = rules ? Number(rules.default_margin_percentage) : 0;
   const rulesOk = !rulesErr && rules !== null && Number.isFinite(marginNum) && marginNum > 0;
   let rulesDetail: string;
   if (rulesOk) {
-    rulesDetail = `Default margin ${marginNum}% (${rules!.pricing_method}), VAT ${Number(rules!.vat_rate)}%.`;
+    const vat = companyRow?.vat_registered ? `${Number(companyRow.vat_rate)}%` : "n/a";
+    rulesDetail = `Default margin ${marginNum}% (${rules!.pricing_method}), VAT ${vat}.`;
   } else if (rulesErr) {
     rulesDetail = `Could not read costing_rules row: ${rulesErr.message}.`;
   } else if (!rules) {
