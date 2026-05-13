@@ -15,6 +15,8 @@ export const openaiProvider: AIProvider = {
     const base64 = Buffer.from(pdf_bytes).toString("base64");
     const dataUrl = `data:application/pdf;base64,${base64}`;
 
+    // GPT-4o supports PDFs in chat completions via the "file" content type
+    // (added in late 2024). Images via "image_url"; PDFs via "file".
     const res = await fetch(OPENAI_URL, {
       method: "POST",
       headers: {
@@ -30,8 +32,14 @@ export const openaiProvider: AIProvider = {
           {
             role: "user",
             content: [
+              {
+                type: "file",
+                file: {
+                  filename,
+                  file_data: dataUrl,
+                },
+              },
               { type: "text", text: `Drawing file: ${filename}. Return strict JSON only.` },
-              { type: "image_url", image_url: { url: dataUrl } },
             ],
           },
         ],

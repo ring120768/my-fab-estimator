@@ -218,6 +218,14 @@ function ResultPanel({
               </li>
             ))}
           </ul>
+          {result.raw_error && (
+            <details className="mt-4 pt-3 border-t border-border">
+              <summary className="text-xs text-muted cursor-pointer">Show raw error details</summary>
+              <pre className="mt-2 text-xs bg-soft p-3 rounded-md overflow-x-auto whitespace-pre-wrap text-bad">
+                {result.raw_error}
+              </pre>
+            </details>
+          )}
           {assessment.advice.length > 0 && (
             <div className="mt-4 pt-4 border-t border-border">
               <div className="text-xs font-medium text-muted mb-2 uppercase tracking-wider">How to fix</div>
