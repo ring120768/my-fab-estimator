@@ -6,6 +6,7 @@
 
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { describeProvider } from "@/lib/ai/providers";
 
 export const runtime = "nodejs";
 
@@ -31,16 +32,14 @@ export async function GET() {
 
   const checks: ReadinessCheck[] = [];
 
-  // 1. OpenAI API key set in environment
-  const openaiConfigured = Boolean(process.env.OPENAI_API_KEY);
+  // 1. AI provider configured (OpenAI or Anthropic)
+  const ai = describeProvider();
   checks.push({
-    ok: openaiConfigured,
+    ok: ai.configured,
     label: "AI provider configured",
-    detail: openaiConfigured
-      ? "OpenAI API key is set."
-      : "OPENAI_API_KEY environment variable is not set. The drawing import won't work until it is.",
-    fix_link: openaiConfigured ? undefined : undefined, // env config is admin-side
-    fix_label: openaiConfigured ? undefined : undefined,
+    detail: ai.configured
+      ? `${ai.selected} (${ai.model}) is set.${ai.fallback_available ? " Both providers available — failover possible." : ""}`
+      : "Neither OPENAI_API_KEY nor ANTHROPIC_API_KEY is set. The drawing import won't work until at least one is configured.",
   });
 
   // 2. Find user's company
@@ -122,8 +121,8 @@ export async function GET() {
     detail: rulesOk
       ? `Default margin ${rules!.default_margin_percentage}%, VAT ${rules!.vat_rate}%.`
       : "Default margin not set — engine can't compute sell prices.",
-    fix_link: rulesOk ? undefined : "/costing-matrix",
-    fix_label: rulesOk ? undefined : "Open costing matrix",
+    fix_link: rulesOk ? undefined : "/costing-matrix#default-margin",
+    fix_label: rulesOk ? undefined : "Set default margin →",
   });
 
   // 6. Feature & sub-component library

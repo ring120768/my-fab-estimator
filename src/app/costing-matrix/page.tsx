@@ -22,6 +22,19 @@ export default function CostingMatrixPage() {
     if (loaded && !ctx) router.replace("/onboarding/company");
   }, [loaded, ctx, router]);
 
+  // If the URL has a hash like #rules, scroll the matching card into view.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  }, [loaded]);
+
   if (!loaded) return <div className="text-muted">Loading…</div>;
   if (!ctx || !company) return <div className="text-muted">Setting up…</div>;
 
@@ -70,8 +83,21 @@ function RulesCard({
   const set = (patch: Partial<typeof r>) =>
     update({ ...company, costing_rules: { ...r, ...patch } });
 
+  // Critical-field validation — flag these in red so the user can see what's wrong
+  const marginMissing = !r.default_margin_percentage || r.default_margin_percentage <= 0;
+  const minMarginMissing = r.minimum_margin_percentage == null;
+  const hasCriticalIssue = marginMissing;
+
   return (
-    <Card title="Costing rules & margins">
+    <div id="rules" className={hasCriticalIssue ? "ring-2 ring-bad rounded-lg" : ""}>
+      <Card title={hasCriticalIssue ? "⚠ Costing rules & margins — action required" : "Costing rules & margins"}>
+      {hasCriticalIssue && (
+        <div className="mb-4 rounded-md bg-bad/10 border border-bad/30 p-3 text-sm text-bad">
+          <strong>Default margin is not set.</strong> The pricing engine can&rsquo;t produce
+          sell prices until this is a positive number. Set it below (e.g. <code>30</code>
+          for a 30% margin) and click <strong>Save changes</strong>.
+        </div>
+      )}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <NumberField label="Standard waste %" value={r.standard_waste_percentage} onChange={(e) => set({ standard_waste_percentage: Number(e.target.value) })} />
         <NumberField label="Consumables %" value={r.consumables_percentage} onChange={(e) => set({ consumables_percentage: Number(e.target.value) })} />
@@ -86,7 +112,14 @@ function RulesCard({
           ]}
           hint={r.pricing_method === "margin" ? "Sell = cost / (1 − margin%)" : "Sell = cost × (1 + markup%)"}
         />
-        <NumberField label="Default %" value={r.default_margin_percentage} onChange={(e) => set({ default_margin_percentage: Number(e.target.value) })} />
+        <div id="default-margin" className={marginMissing ? "ring-2 ring-bad rounded-md p-1 -m-1" : ""}>
+          <NumberField
+            label={marginMissing ? "Default % ⚠ Required" : "Default %"}
+            value={r.default_margin_percentage}
+            onChange={(e) => set({ default_margin_percentage: Number(e.target.value) })}
+            hint={marginMissing ? "Set to e.g. 30 for a 30% margin" : undefined}
+          />
+        </div>
         <NumberField label="Minimum margin %" value={r.minimum_margin_percentage} onChange={(e) => set({ minimum_margin_percentage: Number(e.target.value) })} />
         <NumberField label="Min order value" value={r.minimum_order_value} onChange={(e) => set({ minimum_order_value: Number(e.target.value) })} />
         <NumberField label="Rounding unit" value={r.rounding_unit} onChange={(e) => set({ rounding_unit: Number(e.target.value) })} />
@@ -96,7 +129,8 @@ function RulesCard({
         <ToggleField label="Round sell prices" checked={r.rounding_enabled} onChange={(v) => set({ rounding_enabled: v })} />
         <ToggleField label="VAT registered" checked={r.vat_registered} onChange={(v) => set({ vat_registered: v })} />
       </div>
-    </Card>
+      </Card>
+    </div>
   );
 }
 
