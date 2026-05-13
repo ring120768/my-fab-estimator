@@ -146,7 +146,20 @@ export default function NewQuotePage() {
     router.push("/quotes");
   };
 
-  const allOk = lines.length > 0 && lines.every((l) => l.result.ok);
+  // Save requires every line to be calculable AND every bought-in line to
+  // have a non-zero supplier price. Catches the silent £0 import bug.
+  const allOk = lines.length > 0 && lines.every((l) => {
+    if (!l.result.ok) return false;
+    const sp = l.input.spec;
+    if (sp.product_type === "bought_in" && (!sp.supplier_list_price || sp.supplier_list_price <= 0)) {
+      return false;
+    }
+    return true;
+  });
+  const boughtInMissingPrice = lines.filter((l) => {
+    const sp = l.input.spec;
+    return sp.product_type === "bought_in" && (!sp.supplier_list_price || sp.supplier_list_price <= 0);
+  }).length;
 
   const handleDiscard = () => {
     const hasContent = lines.length > 0
@@ -197,6 +210,12 @@ export default function NewQuotePage() {
         </div>
       )}
 
+      {boughtInMissingPrice > 0 && (
+        <div className="rounded-md bg-warn/10 border border-warn/40 p-3 text-sm text-ink mb-4">
+          <span className="font-medium text-warn">⚠ {boughtInMissingPrice} bought-in line{boughtInMissingPrice === 1 ? "" : "s"} need{boughtInMissingPrice === 1 ? "s" : ""} a supplier list price.</span> The AI couldn&apos;t extract a price from the schedule — open each highlighted line, set the list price + discount, and you&apos;ll be able to save.
+        </div>
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <Card title="Quote header">
@@ -219,8 +238,16 @@ export default function NewQuotePage() {
               </div>
             ) : (
               <ul className="space-y-3">
-                {lines.map((l, i) => (
-                  <li key={l.id} className="border border-border rounded-md p-3 bg-soft">
+                {lines.map((l, i) => {
+                  // Flag lines that aren't priced yet (most often bought-in
+                  // items the AI couldn't price, or free_text/custom lines).
+                  // We don't want estimators silently saving £0 lines.
+                  const isBoughtIn = l.input.spec.product_type === "bought_in";
+                  const needsPrice = isBoughtIn
+                    && "supplier_list_price" in l.input.spec
+                    && (!l.input.spec.supplier_list_price || l.input.spec.supplier_list_price <= 0);
+                  return (
+                  <li key={l.id} className={`border rounded-md p-3 ${needsPrice ? "border-warn/50 bg-warn/5" : "border-border bg-soft"}`}>
                     <div className="flex items-start justify-between gap-3">
                       <div className="text-xs text-muted mt-1 shrink-0 tabular-nums font-medium">
                         {l.input.item_no || `1.${String((i + 1) * 10).padStart(3, "0")}`}
@@ -229,6 +256,11 @@ export default function NewQuotePage() {
                         <div className="text-sm text-ink">{l.result.description || `[${l.result.product_type}]`}</div>
                         {!l.result.ok && (
                           <div className="text-xs text-bad mt-1">{l.result.validation_errors.join("; ")}</div>
+                        )}
+                        {needsPrice && (
+                          <div className="text-xs text-warn font-medium mt-1">
+                            ⚠ Bought-in item needs a supplier list price — edit to set it before saving.
+                          </div>
                         )}
                         <div className="text-xs text-muted mt-1">
                           Qty {l.input.quantity} × {fmtMoney(l.result.breakdown?.unit_price_ex_vat ?? 0)}
@@ -247,7 +279,8 @@ export default function NewQuotePage() {
                       </div>
                     </div>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             )}
             <div className="mt-4">

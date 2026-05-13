@@ -49,6 +49,8 @@ function structurePhrase(s: UnderStructure): string {
     case "drawer_bank": return "bank of drawers";
     case "lined_lockable": return "fully lined ambient storage cupboard with lockable hinged door";
     case "mixed": return "mixed configuration (see specification)";
+    // Defensive default — never print "undefined" to a customer-facing quote.
+    default: return "open framework (per specification)";
   }
 }
 

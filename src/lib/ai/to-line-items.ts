@@ -29,6 +29,40 @@ const CUPBOARD_TYPES: ProductType[] = [
   "wall_cupboard", "hot_cupboard", "storage_cupboard",
 ];
 
+// Defensive runtime validators — AI sometimes returns strings outside the
+// declared TS enum (e.g. "to be confirmed", "as schedule", or the literal
+// "undefined"). We coerce to a safe default rather than passing rubbish into
+// the pricing engine (where it produces NaN costs).
+const VALID_UNDER_STRUCTURES = new Set<BenchSpec["under_structure"]>([
+  "open_no_panels", "open_with_base_shelf", "open_with_void",
+  "open_with_mid_shelf", "cupboard_hinged", "cupboard_sliding",
+  "drawer_bank", "lined_lockable", "mixed",
+]);
+const VALID_MATERIAL_GRADES = new Set(["304", "316", "430"]);
+const VALID_SWG = new Set([18, 16, 14, 10]);
+const VALID_FINISHES = new Set(["brushed", "burnished", "mirror"]);
+const VALID_UPSTAND_POSITIONS = new Set(["rear", "rear_and_ends", "rear_and_both_ends"]);
+
+function safeUnderStructure(v: unknown): BenchSpec["under_structure"] {
+  return typeof v === "string" && VALID_UNDER_STRUCTURES.has(v as BenchSpec["under_structure"])
+    ? (v as BenchSpec["under_structure"])
+    : "open_with_base_shelf";
+}
+function safeGrade(v: unknown): "304" | "316" | "430" {
+  return typeof v === "string" && VALID_MATERIAL_GRADES.has(v) ? (v as "304" | "316" | "430") : "304";
+}
+function safeSwg(v: unknown): 18 | 16 | 14 | 10 {
+  return typeof v === "number" && VALID_SWG.has(v) ? (v as 18 | 16 | 14 | 10) : 16;
+}
+function safeFinish(v: unknown): "brushed" | "burnished" | "mirror" {
+  return typeof v === "string" && VALID_FINISHES.has(v) ? (v as "brushed" | "burnished" | "mirror") : "brushed";
+}
+function safeUpstandPos(v: unknown): "rear" | "rear_and_ends" | "rear_and_both_ends" {
+  return typeof v === "string" && VALID_UPSTAND_POSITIONS.has(v)
+    ? (v as "rear" | "rear_and_ends" | "rear_and_both_ends")
+    : "rear";
+}
+
 export function importedScheduleToLines(
   schedule: ParsedSchedule
 ): { header: HeaderPatch; lines: LineItemInput[] } {
@@ -98,11 +132,11 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
   const pt = item.inferred_product_type;
   const sp = item.suggested_spec ?? {};
 
-  // Default material
+  // Default material — validate every enum at runtime, AI returns can be anything
   const material = {
-    grade: (sp.material_grade ?? "304") as "304" | "316" | "430",
-    swg: (sp.material_swg ?? 16) as 18 | 16 | 14 | 10,
-    finish: (sp.material_finish ?? "brushed") as "brushed" | "burnished" | "mirror",
+    grade: safeGrade(sp.material_grade),
+    swg: safeSwg(sp.material_swg),
+    finish: safeFinish(sp.material_finish),
   };
 
   // Bench-family
@@ -114,8 +148,8 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
       height_mm: sp.height_mm ?? 900,
       material,
       upstand_size_mm: (sp.upstand_size_mm ?? 50) as BenchSpec["upstand_size_mm"],
-      upstand_position: sp.upstand_position ?? "rear",
-      under_structure: (sp.under_structure as BenchSpec["under_structure"]) ?? "open_with_base_shelf",
+      upstand_position: safeUpstandPos(sp.upstand_position),
+      under_structure: safeUnderStructure(sp.under_structure),
       number_of_legs: 4,
       leg_section_mm: 30,
     };
@@ -133,8 +167,9 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
 
   // Worktop
   if (pt === "worktop") {
+    const upstandPosRaw = safeUpstandPos(sp.upstand_position);
     const upstandPos: WorktopSpec["upstand_position"] =
-      sp.upstand_position === "rear_and_ends" || sp.upstand_position === "rear_and_both_ends"
+      upstandPosRaw === "rear_and_ends" || upstandPosRaw === "rear_and_both_ends"
         ? "rear_and_ends"
         : "rear";
     const spec: WorktopSpec = {

@@ -56,7 +56,10 @@ function defaultLabourHours(spec: BenchSpec): number {
     lined_lockable: 3.0,
     mixed: 2.0,
   };
-  return base + structureBonus[spec.under_structure];
+  // Defensive: if spec.under_structure is somehow not in the enum (came in
+  // from an old DB row, bad import, etc.), treat as 0 rather than NaN-poisoning
+  // every downstream calculation.
+  return base + (structureBonus[spec.under_structure] ?? 0);
 }
 
 export function calculateBench(input: BenchInputs): LineItemResult {
