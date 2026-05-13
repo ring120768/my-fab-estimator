@@ -270,21 +270,16 @@ function ResultPanel({
             {bespokeTotal} bespoke fabrication item{bespokeTotal === 1 ? "" : "s"} on this
             drawing. Of those:
           </p>
-          <div className="grid grid-cols-3 gap-3 text-sm mb-5">
+          <div className="grid grid-cols-2 gap-3 text-sm mb-5">
             <div className="rounded-md bg-ok/10 border border-ok/30 p-3">
               <div className="text-xs text-ok font-medium">From schedule</div>
               <div className="text-2xl font-semibold text-ink mt-1">{scheduledCount}</div>
-              <div className="text-xs text-muted mt-1">Read directly from item description text.</div>
+              <div className="text-xs text-muted mt-1">Read directly from the description text — ready to price.</div>
             </div>
             <div className="rounded-md bg-warn/10 border border-warn/30 p-3">
-              <div className="text-xs text-warn font-medium">AI-estimated (±15–20%)</div>
-              <div className="text-2xl font-semibold text-ink mt-1">{estimatedCount}</div>
-              <div className="text-xs text-muted mt-1">Visual estimate from the scaled plan using a 900mm bench-height reference.</div>
-            </div>
-            <div className="rounded-md bg-bad/10 border border-bad/30 p-3">
-              <div className="text-xs text-bad font-medium">No data → default</div>
-              <div className="text-2xl font-semibold text-ink mt-1">{missingDimsCount}</div>
-              <div className="text-xs text-muted mt-1">Will use product-type defaults (e.g. 1800×700×900 for a bench).</div>
+              <div className="text-xs text-warn font-medium">Need manual entry</div>
+              <div className="text-2xl font-semibold text-ink mt-1">{missingDimsCount + estimatedCount}</div>
+              <div className="text-xs text-muted mt-1">Dimensions not in the schedule. You&rsquo;ll enter them in the quote builder — the app sanity-checks each value to catch typos.</div>
             </div>
           </div>
 
@@ -294,11 +289,12 @@ function ResultPanel({
               onClick={onAccept}
               className="text-left rounded-lg border border-accent bg-accent/5 hover:bg-accent/10 p-4 transition-colors"
             >
-              <div className="font-medium text-ink">Trust AI estimates and continue →</div>
+              <div className="font-medium text-ink">Continue and enter dimensions in the app →</div>
               <div className="text-xs text-muted mt-1">
-                Proceed into the quote builder with the AI&rsquo;s extracted and estimated
-                dimensions. Each line item is editable — you can fix any size as you go.
-                Fastest path; expect ±15–20% accuracy on the estimated items.
+                Proceed into the quote builder. Items missing dimensions stay flagged in
+                amber until you fill them in. No guessing — each value is sanity-checked
+                (10mm vs 100mm typos caught), and the quote can&rsquo;t be saved until
+                every bespoke item has real sizes.
               </div>
             </button>
             <button
@@ -309,8 +305,8 @@ function ResultPanel({
               <div className="text-xs text-muted mt-1">
                 Cancel this import. Update your CAD schedule to include explicit
                 dimensions (e.g. <em>&ldquo;approx. 2000mm × 700mm × 900mm&rdquo;</em> in
-                each item description), export a new PDF, then re-upload. Most accurate
-                path; gives you 95%+ confidence per item.
+                each item description), export a new PDF, then re-upload. Best when you
+                want the schedule itself to be the source of truth going forward.
               </div>
             </button>
           </div>

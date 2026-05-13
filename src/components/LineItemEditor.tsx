@@ -23,6 +23,7 @@ import type {
   WorktopSpec,
 } from "@/pricing/v2/types";
 import type { ProductTypeRow } from "@/lib/supabase/quotes";
+import { checkDimensions } from "@/lib/pricing/dimension-validation";
 
 // Supported product types in this MVP UI. Others fall back to "custom".
 const SUPPORTED = new Set<ProductType>([
@@ -73,7 +74,18 @@ export function LineItemEditor({ library, productTypes, initial, onSave, onCance
     [library, productType]
   );
 
+  // Dimension sanity checks (catches typos like 10mm vs 100mm)
+  const dimCheck = useMemo(() => {
+    const dims = "length_mm" in spec
+      ? { length_mm: spec.length_mm, depth_mm: (spec as { depth_mm?: number }).depth_mm, height_mm: (spec as { height_mm?: number }).height_mm }
+      : {};
+    return checkDimensions(spec.product_type, dims);
+  }, [spec]);
+
+  const canSave = dimCheck.errors.length === 0;
+
   const handleSave = () => {
+    if (!canSave) return;
     onSave({
       spec,
       features,
@@ -138,9 +150,26 @@ export function LineItemEditor({ library, productTypes, initial, onSave, onCance
           />
         </div>
 
+        {dimCheck.errors.length > 0 && (
+          <div className="rounded-md bg-bad/10 border border-bad/30 p-3 text-sm text-bad">
+            <div className="font-medium mb-1">⚠ Dimension errors — fix before saving</div>
+            <ul className="list-disc list-inside space-y-0.5 text-xs">
+              {dimCheck.errors.map((e, i) => <li key={i}>{e}</li>)}
+            </ul>
+          </div>
+        )}
+        {dimCheck.warnings.length > 0 && dimCheck.errors.length === 0 && (
+          <div className="rounded-md bg-warn/10 border border-warn/30 p-3 text-sm text-ink">
+            <div className="font-medium mb-1 text-warn">⚠ Unusual dimensions — double-check</div>
+            <ul className="list-disc list-inside space-y-0.5 text-xs">
+              {dimCheck.warnings.map((w, i) => <li key={i}>{w}</li>)}
+            </ul>
+          </div>
+        )}
+
         <div className="flex justify-end gap-2 pt-2">
           <Button variant="secondary" onClick={onCancel}>Cancel</Button>
-          <Button onClick={handleSave}>Save line</Button>
+          <Button onClick={handleSave} disabled={!canSave}>Save line</Button>
         </div>
       </div>
     </Card>
