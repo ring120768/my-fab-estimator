@@ -210,6 +210,10 @@ export interface LineItemInput {
   features: FeatureChoice[];
   subcomponents: SubcomponentChoice[];
   quantity: number;
+  // Schedule item number from the drawing (e.g. "5.01", "1.43").
+  // Preserved verbatim from the source schedule so cross-references stay intact.
+  // Optional — the app falls back to a generated 1.010, 1.020 etc. if not supplied.
+  item_no?: string;
   // Optional estimator overrides
   labour_hours_override?: number;        // forces total labour hours (replaces engine default)
   unit_price_override?: number;          // forces sell price (bypasses calc, still records breakdown)

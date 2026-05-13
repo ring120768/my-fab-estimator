@@ -45,6 +45,7 @@ export function LineItemEditor({ library, productTypes, initial, onSave, onCance
   const [productType, setProductType] = useState<ProductType>(
     initial?.spec.product_type ?? "wall_bench"
   );
+  const [itemNo, setItemNo] = useState<string>(initial?.item_no ?? "");
   const [quantity, setQuantity] = useState<number>(initial?.quantity ?? 1);
   const [labourOverride, setLabourOverride] = useState<number | "">(initial?.labour_hours_override ?? "");
   const [priceOverride, setPriceOverride] = useState<number | "">(initial?.unit_price_override ?? "");
@@ -91,6 +92,7 @@ export function LineItemEditor({ library, productTypes, initial, onSave, onCance
       features,
       subcomponents: subcomps,
       quantity,
+      item_no: itemNo.trim() || undefined,
       labour_hours_override: typeof labourOverride === "number" ? labourOverride : undefined,
       unit_price_override: typeof priceOverride === "number" ? priceOverride : undefined,
     });
@@ -99,15 +101,26 @@ export function LineItemEditor({ library, productTypes, initial, onSave, onCance
   return (
     <Card title="Edit line item">
       <div className="space-y-4">
-        <SelectField
-          label="Product type"
-          value={productType}
-          onChange={(e) => handleTypeChange(e.target.value as ProductType)}
-          options={productTypes
-            .filter((pt) => SUPPORTED.has(pt.code as ProductType))
-            .map((pt) => ({ value: pt.code, label: pt.name }))}
-          hint={SUPPORTED.has(productType) ? undefined : "Limited UI for this type — using free text"}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <TextField
+            label="Item # (from drawing schedule)"
+            value={itemNo}
+            onChange={(e) => setItemNo(e.target.value)}
+            placeholder="e.g. 5.01"
+            hint="Preserves the drawing's numbering. Leave blank to auto-generate."
+          />
+          <div className="md:col-span-2">
+            <SelectField
+              label="Product type"
+              value={productType}
+              onChange={(e) => handleTypeChange(e.target.value as ProductType)}
+              options={productTypes
+                .filter((pt) => SUPPORTED.has(pt.code as ProductType))
+                .map((pt) => ({ value: pt.code, label: pt.name }))}
+              hint={SUPPORTED.has(productType) ? undefined : "Limited UI for this type — using free text"}
+            />
+          </div>
+        </div>
 
         <SpecForm spec={spec} setSpec={setSpec} />
 

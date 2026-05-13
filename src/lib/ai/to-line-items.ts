@@ -56,6 +56,8 @@ export interface HeaderPatch {
 
 function toLineItemInput(item: ParsedLineItem): LineItemInput {
   const qty = Math.max(1, Math.round(item.quantity || 1));
+  // Preserve the schedule's item number verbatim from the drawing.
+  const itemNo = item.item_no?.trim() || undefined;
 
   // ----- FREE TEXT / CLIENT-SUPPLIED / FUTURE -----
   if (item.is_client_supplied || item.is_future_item) {
@@ -69,6 +71,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
       features: [],
       subcomponents: [],
       quantity: qty,
+      item_no: itemNo,
     };
   }
 
@@ -87,6 +90,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
       features: [],
       subcomponents: [],
       quantity: qty,
+      item_no: itemNo,
     };
   }
 
@@ -122,6 +126,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
       features: [],
       subcomponents: [],
       quantity: qty,
+      item_no: itemNo,
       description_override: item.description,
     };
   }
@@ -141,7 +146,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
       upstand_size_mm: (sp.upstand_size_mm ?? 50) as WorktopSpec["upstand_size_mm"],
       upstand_position: upstandPos,
     };
-    return { spec, features: [], subcomponents: [], quantity: qty };
+    return { spec, features: [], subcomponents: [], quantity: qty, item_no: itemNo };
   }
 
   // Splashback
@@ -153,7 +158,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
       material,
       wall_height_mm: sp.height_mm ?? 600,
     };
-    return { spec, features: [], subcomponents: [], quantity: qty };
+    return { spec, features: [], subcomponents: [], quantity: qty, item_no: itemNo };
   }
 
   // Shelf family
@@ -167,7 +172,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
         tiers: 1,
         wall_brackets: true,
       },
-      features: [], subcomponents: [], quantity: qty,
+      features: [], subcomponents: [], quantity: qty, item_no: itemNo,
     };
   }
 
@@ -186,7 +191,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
         adjustable_shelves: false,
         lockable: false,
       },
-      features: [], subcomponents: [], quantity: qty,
+      features: [], subcomponents: [], quantity: qty, item_no: itemNo,
     };
   }
 
@@ -202,7 +207,7 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
         perforated_inserts: true,
         fixing_brackets: 3,
       },
-      features: [], subcomponents: [], quantity: qty,
+      features: [], subcomponents: [], quantity: qty, item_no: itemNo,
     };
   }
 
@@ -216,5 +221,6 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
     features: [],
     subcomponents: [],
     quantity: qty,
+    item_no: itemNo,
   };
 }

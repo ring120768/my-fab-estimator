@@ -118,6 +118,7 @@ export default function NewQuotePage() {
     setSaveError(null);
     const linesInput: QuoteLineInput[] = lines.map((l, i) => ({
       position: (i + 1) * 10,
+      item_no: l.input.item_no,
       product_type: l.result.product_type,
       description: l.result.description,
       quantity: l.input.quantity,
@@ -221,8 +222,8 @@ export default function NewQuotePage() {
                 {lines.map((l, i) => (
                   <li key={l.id} className="border border-border rounded-md p-3 bg-soft">
                     <div className="flex items-start justify-between gap-3">
-                      <div className="text-xs text-muted mt-1 shrink-0">
-                        1.{String((i + 1) * 10).padStart(3, "0")}
+                      <div className="text-xs text-muted mt-1 shrink-0 tabular-nums font-medium">
+                        {l.input.item_no || `1.${String((i + 1) * 10).padStart(3, "0")}`}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-sm text-ink">{l.result.description || `[${l.result.product_type}]`}</div>

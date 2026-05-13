@@ -78,6 +78,9 @@ export interface QuoteHeaderInput {
 
 export interface QuoteLineInput {
   position: number;
+  // Schedule item number from the drawing (e.g. "5.01"). Preserved verbatim.
+  // Optional — if missing, we generate "1.NNN" from the position as a fallback.
+  item_no?: string;
   product_type: ProductType;
   description: string;
   quantity: number;
@@ -140,7 +143,11 @@ export async function saveQuote(
     const rows = lines.map((l) => ({
       quote_id: quote.id,
       position: l.position,
-      item_no: `1.${String(l.position).padStart(3, "0")}`,
+      // Preserve the drawing schedule's item number if supplied; otherwise
+      // fall back to a generated 1.NNN based on position. Schedule loyalty:
+      // cross-references inside descriptions (e.g. "filter for ITEM 5.09")
+      // stay intact when the source numbering is preserved.
+      item_no: l.item_no?.trim() || `1.${String(l.position).padStart(3, "0")}`,
       product_type: l.product_type,
       item_reference: l.item_reference ?? null,
       model_no: l.model_no ?? null,
