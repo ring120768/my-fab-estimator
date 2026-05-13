@@ -217,11 +217,11 @@ export interface LineItemInput {
 }
 
 export interface LineItemBreakdown {
-  // Cost lines per line item
+  // Cost lines per line item (pre-margin)
   material_lines: CostLine[];
   labour_lines: CostLine[];
 
-  // Per-unit subtotals
+  // Per-unit subtotals (pre-margin)
   material_cost_per_unit: number;
   labour_cost_per_unit: number;
   consumables_cost_per_unit: number;
@@ -229,10 +229,15 @@ export interface LineItemBreakdown {
   overhead_cost_per_unit: number;
   total_cost_per_unit: number;
 
-  // Margin/markup → unit selling price
+  // Margin/markup applied only to pre-margin costs
   pricing_method: "margin" | "markup";
   margin_or_markup_percentage: number;
-  unit_price_ex_vat: number;
+
+  // Catalogue sell-price items (added AFTER margin — already include markup)
+  post_margin_lines: CostLine[];
+  post_margin_cost_per_unit: number;
+
+  unit_price_ex_vat: number;             // = margin-applied total + post_margin_cost
   line_total_ex_vat: number;             // unit_price_ex_vat × quantity
 }
 

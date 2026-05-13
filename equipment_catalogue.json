@@ -1,0 +1,2574 @@
+{
+  "equipment": [
+    {
+      "manufacturer": "Adande",
+      "description": "Undercounter Fridge - Max 2 Section",
+      "model": "VCS1/HCHS",
+      "list_price": 2888.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Adande",
+      "description": "",
+      "model": "RG",
+      "list_price": 104.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Adande",
+      "description": "Undercounter Fridge - Max 2 Section",
+      "model": "VCS1/CHS",
+      "list_price": 2856.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Adande",
+      "description": "",
+      "model": "BC",
+      "list_price": 730.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Adventys",
+      "description": "",
+      "model": "B2RIC 3000",
+      "list_price": 845.0,
+      "cost_notes": "Distributer Price",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Adventys",
+      "description": "",
+      "model": "LITE 2500",
+      "list_price": 265.0,
+      "cost_notes": "Distributer Price",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Altoshaam",
+      "description": "",
+      "model": "500-2DN",
+      "list_price": 2920.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Beach Ovens",
+      "description": "",
+      "model": "",
+      "list_price": 0.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Blue Seal",
+      "description": "",
+      "model": "E33D5",
+      "list_price": 1540.0,
+      "cost_notes": "Special Dealer Price - no Discount",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Carpigiani",
+      "description": "",
+      "model": "153+",
+      "list_price": 12600.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "CCE Group Ltd",
+      "description": "",
+      "model": "Quadrochef",
+      "list_price": 9900.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Clifton",
+      "description": "",
+      "model": "FLE28D",
+      "list_price": 240.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Clifton",
+      "description": "",
+      "model": "FX28D + FXC1",
+      "list_price": 1370.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Coffee Hit",
+      "description": "Pitcher Rinser - Small",
+      "model": "RHPR300-S",
+      "list_price": 99.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Coffee Hit",
+      "description": "Pitcher Rinser - Large",
+      "model": "RHPR600-S",
+      "list_price": 116.08,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "CuisinEquip",
+      "description": "Smooth Induction Griddle",
+      "model": "BGAH401S",
+      "list_price": 4290.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC-4-6X10",
+      "list_price": 72.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC-4-6X15",
+      "list_price": 89.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-4X18",
+      "list_price": 91.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-5X9",
+      "list_price": 67.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-6X12",
+      "list_price": 85.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC-4-5X9",
+      "list_price": 61.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC-4-6X8",
+      "list_price": 63.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "PST-3-800x530",
+      "list_price": 160.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZSS18030/4",
+      "list_price": 184.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "PGT-1/1-20",
+      "list_price": 613.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZSS6040/04",
+      "list_price": 120.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "FAB-HDC-S-600 + FAB-ACS-LOCK",
+      "list_price": 610.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZSS10040/4",
+      "list_price": 152.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC15060/4",
+      "list_price": 51.73,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC12060/4",
+      "list_price": 43.97,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZWRN-6-900-600",
+      "list_price": 362.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZWRN-6-1200-600",
+      "list_price": 432.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZC9060/4",
+      "list_price": 36.21,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZSS15040/4",
+      "list_price": 184.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZN18050/4",
+      "list_price": 59.49,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "PGT-1/1-15",
+      "list_price": 225.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZN15030/4",
+      "list_price": 46.56,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZSS12030/4",
+      "list_price": 155.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "",
+      "model": "EZN9060/4",
+      "list_price": 38.8,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-772",
+      "list_price": 357.33,
+      "cost_notes": "+ \u00a350 FOR CARRIAGE",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-862",
+      "list_price": 378.67,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-1304",
+      "list_price": 453.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-1394",
+      "list_price": 469.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-950",
+      "list_price": 384.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-1834",
+      "list_price": 584.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-1038",
+      "list_price": 402.67,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-1696",
+      "list_price": 637.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-373-1304",
+      "list_price": 402.67,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-373-862",
+      "list_price": 338.67,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-373-772",
+      "list_price": 322.67,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-373-950",
+      "list_price": 309.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-577-1569",
+      "list_price": 517.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZPM-4-373-1569",
+      "list_price": 445.33,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-6X15",
+      "list_price": 98.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-6X6",
+      "list_price": 65.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-6X10",
+      "list_price": 79.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC-4-5X10",
+      "list_price": 63.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC-4-6X12",
+      "list_price": 78.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZC-4-3X15",
+      "list_price": 69.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-5X15",
+      "list_price": 89.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "EAIS",
+      "description": "Racking",
+      "model": "EZN-4-6X8",
+      "list_price": 70.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Ellidge And Fairley",
+      "description": "",
+      "model": "EF 10",
+      "list_price": 1575.0,
+      "cost_notes": "Priced as Jantex GF261",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Eurocave",
+      "description": "",
+      "model": "5259 V",
+      "list_price": 0.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Eurocave",
+      "description": "",
+      "model": "5259 S",
+      "list_price": 0.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Exclusive Ranges",
+      "description": "",
+      "model": "MS-I-20 EMM 660",
+      "list_price": 8471.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Falcon",
+      "description": "",
+      "model": "G3101",
+      "list_price": 3100.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Falcon",
+      "description": "",
+      "model": "G3101 + CASTORS",
+      "list_price": 3325.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Fosters",
+      "description": "",
+      "model": "EP700H",
+      "list_price": 1198.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Fosters",
+      "description": "",
+      "model": "EP700L",
+      "list_price": 1510.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Frima",
+      "description": "",
+      "model": "VCC 211 +",
+      "list_price": 17937.0,
+      "cost_notes": "TAP, MIXER + HOSE",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Frima",
+      "description": "",
+      "model": "VCC 211 + -S",
+      "list_price": 17840.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Frima",
+      "description": "Accessories Pack VarioCooking Center for model 211 includes:\n1x Arm for automatic raising/lowering mechanism\n2x Boiling Basket 112\n1x Scraper\n2x Rack\n1x Colander",
+      "model": "60.73.306",
+      "list_price": 733.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Frima",
+      "description": "Water Connection",
+      "model": "87.00.174",
+      "list_price": 97.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Harris & Bailey",
+      "description": "",
+      "model": "VKSABD/ SABC",
+      "list_price": 149.1,
+      "cost_notes": "PRICE INCLUDES WATER CONNECTION",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hatco",
+      "description": "",
+      "model": "HDW-3B",
+      "list_price": 3447.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hatco",
+      "description": "",
+      "model": "QTS1",
+      "list_price": 3374.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "FM-480AWKE-SB",
+      "list_price": 7780.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-65NE + DRAIN PUMP + FILTER",
+      "list_price": 2919.0,
+      "cost_notes": "+5% For April Price increase",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "B-301SA",
+      "list_price": 1290.0,
+      "cost_notes": "+5% For April Price increase",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "9320-52",
+      "list_price": 255.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-240AWNE-23",
+      "list_price": 4620.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-240DWNE-23",
+      "list_price": 4620.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-240XWNE-23",
+      "list_price": 4620.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "B-801SA",
+      "list_price": 2140.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-240ANE",
+      "list_price": 6815.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "FM-300AKE-SB",
+      "list_price": 6455.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-100CNE-HC + FILTER + PUMP",
+      "list_price": 3840.0,
+      "cost_notes": "PRICE INCLUDES; 9320-51 + ZP-103",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-65NE",
+      "list_price": 2470.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "",
+      "model": "IM-100CNE",
+      "list_price": 3640.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "Water Filter",
+      "model": "9320-51",
+      "list_price": 145.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Hoshizaki",
+      "description": "Drain Pump",
+      "model": "ZP-105",
+      "list_price": 335.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Iglu",
+      "description": "",
+      "model": "PC.1VH",
+      "list_price": 2915.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Iglu",
+      "description": "",
+      "model": "PR/1VH",
+      "list_price": 2839.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Iglu",
+      "description": "",
+      "model": "TRG/3V7",
+      "list_price": 4336.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Iglu",
+      "description": "",
+      "model": "KC/371",
+      "list_price": 687.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Iglu",
+      "description": "",
+      "model": "TRG/2VFOH",
+      "list_price": 3064.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "IMC",
+      "description": "",
+      "model": "RK 15",
+      "list_price": 1155.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Jantex",
+      "description": "",
+      "model": "GJ033",
+      "list_price": 43.99,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Jantex",
+      "description": "",
+      "model": "GJ034",
+      "list_price": 13.19,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Jestic (Irinox)",
+      "description": "",
+      "model": "MF25.1",
+      "list_price": 10491.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Lincat",
+      "description": "",
+      "model": "EB4FX",
+      "list_price": 713.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "AJPR50-2-W + M-MX91 + F08",
+      "list_price": 188.26000000000002,
+      "cost_notes": "PRICE INCLUDES MIXER VALVE AND WATER CONNECTION",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "CZPEPAT40S",
+      "list_price": 81.45,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "TX-PR-30L-ST-BF2",
+      "list_price": 318.97,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "GP-DMI-STD-2",
+      "list_price": 723.78,
+      "cost_notes": "PRICE INCLUDES GREASE PACK",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Dosing Unit - Mains",
+      "model": "GP-DMI-MAINS-2",
+      "list_price": 622.43,
+      "cost_notes": "PRICE INCLUDES GREASE PACK",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Grease Packs",
+      "model": "GP-MSGD5",
+      "list_price": 149.95,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Delabie Tempomatic Mix 3 Tap",
+      "model": "DLB49200615",
+      "list_price": 541.67,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "WS3-KVS",
+      "list_price": 169.03,
+      "cost_notes": "PRICE INCLUDES WATER CONNECTION",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "DLB729108",
+      "list_price": 125.23,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "WR-500BL3",
+      "list_price": 36.74,
+      "cost_notes": "PRICE INCLUDES WATER CONNECTIONS",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "500BL3 - SINGLE",
+      "list_price": null,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "WR-500ML3",
+      "list_price": 79.28,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "WR-500ML3 - SINGLE",
+      "list_price": 50.410000000000004,
+      "cost_notes": "PRICE INCLUDES WATER CONNECTION",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "WS4-L",
+      "list_price": 95.75,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "",
+      "model": "AJPR30-ST-BF2-S",
+      "list_price": 271.82,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Water Connection",
+      "model": "F08",
+      "list_price": 3.77,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Mixer Valve",
+      "model": "M-MX91",
+      "list_price": 19.28,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Janitorial Sink",
+      "model": "BSXJTS700",
+      "list_price": 602.87,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Gas Hose 3/4",
+      "model": "2675NPVF36",
+      "list_price": 63.28,
+      "cost_notes": "Mark Up 50%",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Mechline",
+      "description": "Gas Governor",
+      "model": "C-GRO75",
+      "list_price": 24.71,
+      "cost_notes": "Mark Up 100%",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Multivac",
+      "description": "",
+      "model": "C200",
+      "list_price": 3275.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Pacojet",
+      "description": "",
+      "model": "Pacojet 2",
+      "list_price": 3925.0,
+      "cost_notes": "Price includes \u00a335 del per item",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Pelsis",
+      "description": "",
+      "model": "EX-30",
+      "list_price": 265.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Pelsis",
+      "description": "",
+      "model": "EX30W",
+      "list_price": 192.8,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Pitco",
+      "description": "",
+      "model": "SG18DI",
+      "list_price": 3176.25,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "Undercounter Fridge - Max 2 Section",
+      "model": "MCU 211 SS",
+      "list_price": 2805.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "MCU 311 SS",
+      "list_price": 3265.0,
+      "cost_notes": "",
+      "install_hours_eng": 1.0,
+      "install_hours_asst": 1.0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "Undercounter Fridge - Max 2 Section",
+      "model": "MCU 223 SS",
+      "list_price": 2805.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "PCF 40",
+      "list_price": 7210.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "MPT 601 SS",
+      "list_price": 2105.0,
+      "cost_notes": "uc-m + excellence i plus",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "Undercounter Fridge - Max 2 Section",
+      "model": "LCU 211 SS",
+      "list_price": 3175.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "LPT 601 SS",
+      "list_price": 2605.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "LPT 601 SS (LH DOOR)",
+      "list_price": 2605.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "HUBC 422 SS",
+      "list_price": 4750.0,
+      "cost_notes": "Priced as Jestic Mt Adams 5' Wood",
+      "install_hours_eng": 1.0,
+      "install_hours_asst": 1.0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "MCU 423 SS",
+      "list_price": 3770.0,
+      "cost_notes": "",
+      "install_hours_eng": 1.0,
+      "install_hours_asst": 1.0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "PCF 15",
+      "list_price": 5005.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "LPU 150 SS",
+      "list_price": 1270.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "HPU 152 SS",
+      "list_price": 1860.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "MCU 411 SS",
+      "list_price": 3770.0,
+      "cost_notes": "",
+      "install_hours_eng": 1.0,
+      "install_hours_asst": 1.0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "HPU 150 SS",
+      "list_price": 1270.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "VUBC 121 SS",
+      "list_price": 2705.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "HWU 311",
+      "list_price": 3265.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "HSS 300 SS",
+      "list_price": 2335.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "Undercounter Fridge - Max 2 Section",
+      "model": "BBS 900",
+      "list_price": 1825.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "Undercounter Fridge - Max 2 Section",
+      "model": "BBS 600",
+      "list_price": 1215.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "GFS 600",
+      "list_price": 2035.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "BBS 1350",
+      "list_price": 2535.0,
+      "cost_notes": "",
+      "install_hours_eng": 0.5,
+      "install_hours_asst": 0.5,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "GLASS SLIDING DOORS (FOR BBS 900)",
+      "list_price": 540.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "HSS 150 SS",
+      "list_price": 1615.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "Bank Of 3 Drawers",
+      "list_price": 790.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "",
+      "model": "Bank Of 2 Drawers",
+      "list_price": 485.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Precision",
+      "description": "For MCU Models",
+      "model": "RH Compressor",
+      "list_price": 108.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "1/1 GN GRIDS",
+      "model": "6010.1101",
+      "list_price": 28.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "ULTRAVENT HOOD",
+      "model": "60.72.320",
+      "list_price": 3362.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "UG I STAND",
+      "model": "60.30.362",
+      "list_price": 391.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "UG II STANDARD",
+      "model": "60.30.328",
+      "list_price": 868.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "UG II BAKERY",
+      "model": "60.30.836",
+      "list_price": 1059.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "STACKING KIT (61/61 & 61/101)",
+      "model": "60.71.926",
+      "list_price": 913.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "CONNECTION KIT",
+      "model": "60.70.464",
+      "list_price": 57.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "Heat Shield 61",
+      "model": "60.70.390",
+      "list_price": 159.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "Bakery Hanging Rack",
+      "model": "60.61.247",
+      "list_price": 228.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "400x600 Grids",
+      "model": "6015.1",
+      "list_price": 65.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "6 GRID SCC E",
+      "model": "SCC WE 61E",
+      "list_price": 8420.0,
+      "cost_notes": "",
+      "install_hours_eng": 4.0,
+      "install_hours_asst": 2.0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rational",
+      "description": "10 GRID SCC E",
+      "model": "SCC WE 101E",
+      "list_price": 11570.0,
+      "cost_notes": "",
+      "install_hours_eng": 4.0,
+      "install_hours_asst": 2.0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Uropa Distributors",
+      "description": "",
+      "model": "CD992",
+      "list_price": 345.39,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Uropa Distributors",
+      "description": "",
+      "model": "RB C193",
+      "list_price": 75.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "RH Hall",
+      "description": "",
+      "model": "V20",
+      "list_price": 2450.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Robot Coupe",
+      "description": "",
+      "model": "R401",
+      "list_price": 1810.0,
+      "cost_notes": "INCLUDES \u00a315 CARRIAGE",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rondo",
+      "description": "Pastry Sheeter",
+      "model": "STM5303.B0",
+      "list_price": 4750.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rorgue",
+      "description": "",
+      "model": "Rorgue 900",
+      "list_price": 5920.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "FG354100 + DOLLY",
+      "list_price": 119.41999999999999,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "F649",
+      "list_price": 41.49,
+      "cost_notes": "WEB PRICE - NO DISCOUNT",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "F603",
+      "list_price": 28.67,
+      "cost_notes": "WEB PRICE - NO DISCOUNT",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "F643",
+      "list_price": 51.3,
+      "cost_notes": "WEB PRICE - NO DISCOUNT",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "FG360088WHT",
+      "list_price": 234.2,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "R05071",
+      "list_price": 0.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "L638",
+      "list_price": 31.68,
+      "cost_notes": "WEB PRICE - NO DISCOUNT",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "L644",
+      "list_price": 48.5,
+      "cost_notes": "WEB PRICE - NO DISCOUNT",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Rubbermaid",
+      "description": "",
+      "model": "L638 + L644",
+      "list_price": 80.18,
+      "cost_notes": "WEB PRICE - NO DISCOUNT",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Synergy",
+      "description": "Charboil Grill",
+      "model": "SG630",
+      "list_price": 2695.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Synergy",
+      "description": "Resting Shelf -630",
+      "model": "SG630RS",
+      "list_price": 275.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Synergy",
+      "description": "Cooking Shelf -630",
+      "model": "SG630CS",
+      "list_price": 245.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Synergy",
+      "description": "Griddle Plate -630",
+      "model": "SG630GP",
+      "list_price": 290.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Synergy",
+      "description": "Garnish Rail -630",
+      "model": "SG630GR",
+      "list_price": 245.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Synergy",
+      "description": "Lifting Tool",
+      "model": "SYNERGYLIT",
+      "list_price": 0.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Synergy",
+      "description": "Scraping Tool",
+      "model": "SYNERGYST",
+      "list_price": 0.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "UNOX",
+      "description": "6 grid",
+      "model": "XEBC-06EU-EPR",
+      "list_price": 6995.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "UNOX",
+      "description": "Deck Top",
+      "model": "XEBDC-01EU-C",
+      "list_price": 3085.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "UNOX",
+      "description": "Prover",
+      "model": "XEBPC-12EU-C",
+      "list_price": 2395.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "UNOX",
+      "description": "Stacking Kit",
+      "model": "XUC061",
+      "list_price": 495.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Valentine",
+      "description": "",
+      "model": "EVO 2200",
+      "list_price": 3840.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Valentine",
+      "description": "",
+      "model": "EVO 2525 T",
+      "list_price": 4730.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Vollrath",
+      "description": "",
+      "model": "4075603",
+      "list_price": 1300.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Vollrath",
+      "description": "",
+      "model": "40758",
+      "list_price": 3910.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "PT-M",
+      "list_price": 10460.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "DUOMATIK 3",
+      "list_price": 1791.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "PT-M EP",
+      "list_price": 15065.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "PT-L",
+      "list_price": 12115.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "PT-XL",
+      "list_price": 12700.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "Excellence iPlus",
+      "list_price": 2200.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "PT INT. WATER SOFTENER",
+      "list_price": 835.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "UC INT. WATER SOFTENER",
+      "list_price": 815.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "UC-M",
+      "list_price": 4980.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "ENERGY PLUS",
+      "list_price": 885.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "MTR2-120",
+      "list_price": 32195.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "DUOMATIK3",
+      "list_price": 1791.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "61007739",
+      "list_price": 630.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "PT-M (DISHES)",
+      "list_price": 10460.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "UC-M (GLASS)",
+      "list_price": 4980.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "UC Excellence iPlus",
+      "list_price": 2200.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "",
+      "model": "UC-XL",
+      "list_price": 6660.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Winterhalter",
+      "description": "Integrated Rinse & Detergent Dosing Device",
+      "model": "FLUIDOSKIT",
+      "list_price": 510.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Woodstone",
+      "description": "",
+      "model": "WS-MS-5-W",
+      "list_price": 13504.4,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    },
+    {
+      "manufacturer": "Woodstone",
+      "description": "",
+      "model": "WS-TL-AD",
+      "list_price": 685.0,
+      "cost_notes": "",
+      "install_hours_eng": 0,
+      "install_hours_asst": 0,
+      "install_hours_foreman": 0
+    }
+  ],
+  "supplier_terms": [
+    {
+      "supplier": "Adande",
+      "equipment_category": "All Equipment",
+      "discount_pct": 34.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Advance Group",
+      "equipment_category": "Thermodyne",
+      "discount_pct": 34.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Advante",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Blue Seal",
+      "equipment_category": "All Equipment",
+      "discount_pct": 40.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Camber",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "CCE Group Ltd",
+      "equipment_category": "All Fabrication - discount on Fab Costing Sheet",
+      "discount_pct": 0.0,
+      "warranty": null
+    },
+    {
+      "supplier": "Charvet",
+      "equipment_category": "All Equipment",
+      "discount_pct": 40.0,
+      "warranty": "1 Year partsonly"
+    },
+    {
+      "supplier": "Chefline Solutions",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Clay Oven",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Classeq",
+      "equipment_category": "Dish/Glass washers",
+      "discount_pct": null,
+      "warranty": "1 Year/ 2 years P &L"
+    },
+    {
+      "supplier": "Clifton",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Coolequip-Cheftools",
+      "equipment_category": "Pacojet",
+      "discount_pct": 10.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Cuisinequip",
+      "equipment_category": "HWM induction, Counter top, Bespoke Ranges & Free Standing",
+      "discount_pct": 35.0,
+      "warranty": "5 Years Parts & labour"
+    },
+    {
+      "supplier": "Dualit",
+      "equipment_category": "Toasters",
+      "discount_pct": 25.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Eais",
+      "equipment_category": "Shelving",
+      "discount_pct": 0.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Electrolux",
+      "equipment_category": null,
+      "discount_pct": 50.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Equipline",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": null
+    },
+    {
+      "supplier": "European Water Care",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Exclusive Ranges",
+      "equipment_category": "Menu Systems",
+      "discount_pct": null,
+      "warranty": "1 Year  Parts & labour"
+    },
+    {
+      "supplier": "Falcon",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "FEM",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Foster Refrigeration",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Frima",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Gamble / Hatco",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Gram",
+      "equipment_category": "main catalogue products,",
+      "discount_pct": 49.0,
+      "warranty": "5 Years Parts & labour"
+    },
+    {
+      "supplier": "Gamko",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "3 Years parts & 2 Years labour"
+    },
+    {
+      "supplier": "Granualdsik",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Grande Cuisine",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "CAPIC\n1 Year parts and labour on-site warranty.\nSecond year parts only warranty (on basis appliance has been serviced within at end of year one).\nAthanor 1 Year parts and labour on-site warranty."
+    },
+    {
+      "supplier": "Harris & Bailey",
+      "equipment_category": null,
+      "discount_pct": 0.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Hatco",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Hobart",
+      "equipment_category": null,
+      "discount_pct": 45.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Hoshizaki",
+      "equipment_category": null,
+      "discount_pct": 47.0,
+      "warranty": "3 Years Parts & labour"
+    },
+    {
+      "supplier": "Hubbard",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "various - 3 Years parts & 2 Years labour"
+    },
+    {
+      "supplier": "Iglu",
+      "equipment_category": null,
+      "discount_pct": 50.0,
+      "warranty": "3 Years parts and labour"
+    },
+    {
+      "supplier": "IMC",
+      "equipment_category": "Barcooler",
+      "discount_pct": 40.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Imperial (Gambles)",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Instanta",
+      "equipment_category": "Water Boiler",
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Interlevin",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Jestic",
+      "equipment_category": "Josper, Irinox Blast Chiller, Vitamix",
+      "discount_pct": null,
+      "warranty": "1 Year parts & labour"
+    },
+    {
+      "supplier": "Lincat",
+      "equipment_category": null,
+      "discount_pct": 45.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Maidaid",
+      "equipment_category": null,
+      "discount_pct": 45.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Manitowoc",
+      "equipment_category": "Convotherm 4",
+      "discount_pct": 45.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Mechline",
+      "equipment_category": "Taps/Gas hoses",
+      "discount_pct": 39.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Meiko",
+      "equipment_category": "Warewashing",
+      "discount_pct": null,
+      "warranty": "varies- ECO machines 3 Years Parts & labour- Special deal."
+    },
+    {
+      "supplier": "Metcalfe",
+      "equipment_category": "Equipment",
+      "discount_pct": 37.5,
+      "warranty": "1 Year P & the repair work is covered for 6-months following the initial repair, as long as the fault is the same as the original."
+    },
+    {
+      "supplier": "Middleby",
+      "equipment_category": "Ovens",
+      "discount_pct": null,
+      "warranty": "Pitco - 1 Year  Parts & labour"
+    },
+    {
+      "supplier": "Multivac",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Nayati",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Nicklelectro",
+      "equipment_category": "Clifton range",
+      "discount_pct": 25.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Panasonic",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "3 Years Parts & labour"
+    },
+    {
+      "supplier": "Pelsis",
+      "equipment_category": null,
+      "discount_pct": 10.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Pentland",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Precision",
+      "equipment_category": "Refrigeration",
+      "discount_pct": 45.0,
+      "warranty": "3 Years Parts & labour"
+    },
+    {
+      "supplier": "Rational",
+      "equipment_category": "Equipment",
+      "discount_pct": 50.0,
+      "warranty": "1 Year Parts & labour-  register online to get 2nd year FOC"
+    },
+    {
+      "supplier": "Rubbermaid",
+      "equipment_category": "Bins",
+      "discount_pct": 20.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Uropa Distributors",
+      "equipment_category": null,
+      "discount_pct": 25.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Regale",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "3 Years  -Panasonic Microwave"
+    },
+    {
+      "supplier": "Robot Coupe",
+      "equipment_category": "Equipment",
+      "discount_pct": 30.0,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Sammic",
+      "equipment_category": null,
+      "discount_pct": 40.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Synergy",
+      "equipment_category": null,
+      "discount_pct": 30.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Thermomix",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Thermodyne",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year Parts & labour"
+    },
+    {
+      "supplier": "Unox",
+      "equipment_category": "Combi Ovens",
+      "discount_pct": 45.0,
+      "warranty": "2 Years Parts & labour"
+    },
+    {
+      "supplier": "Valentine",
+      "equipment_category": "Equipment",
+      "discount_pct": 35.0,
+      "warranty": "Fryers 3 Years Parts & labour"
+    },
+    {
+      "supplier": "Valera",
+      "equipment_category": null,
+      "discount_pct": null,
+      "warranty": "1 Year labour & 2 Years parts"
+    },
+    {
+      "supplier": "Weald",
+      "equipment_category": "Refrigeration",
+      "discount_pct": 25.0,
+      "warranty": "1 Year Labour and 2 Years parts."
+    },
+    {
+      "supplier": "Williams Refrigeration",
+      "equipment_category": "Equipment",
+      "discount_pct": 45.0,
+      "warranty": "1 Year labour, 2 Years parts"
+    },
+    {
+      "supplier": "Winterhalter",
+      "equipment_category": "Equipment",
+      "discount_pct": 55.00000000000001,
+      "warranty": "3 Year Parts & labour"
+    }
+  ]
+}

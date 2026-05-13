@@ -9,6 +9,7 @@ import { LogoWithText } from "@/components/Logo";
 const links = [
   { href: "/", label: "Dashboard" },
   { href: "/costing-matrix", label: "Costing Matrix" },
+  { href: "/equipment", label: "Equipment Catalogue" },
   { href: "/quotes/new", label: "New Quote" },
   { href: "/quotes/import", label: "Import from drawing" },
   { href: "/quotes", label: "Quotes" },

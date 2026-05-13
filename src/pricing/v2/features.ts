@@ -1,9 +1,16 @@
 // Apply selected features and sub-components to a line item.
 //
-// A feature uplifts material cost + labour cost. The library entry says what
-// the uplift is in fundamental terms (material £, labour minutes). The engine
-// converts labour minutes to £ using the company's hourly rate, then adds it
-// in.
+// Two cost buckets returned:
+//
+//   • pre_margin: material_cost / labour_cost computed from material_cost +
+//     labour_minutes fields on the library entry. These flow through the
+//     normal pricing pipeline (consumables → build cost → overhead → margin).
+//
+//   • post_margin: when a feature/sub-component has a default_price (or
+//     override_price), that value is treated as a customer-facing SELL price
+//     already including any markup. It bypasses the margin pipeline and is
+//     added directly to unit_price_ex_vat. This avoids double-marking-up
+//     catalogue items.
 
 import type {
   CompanyCostingData,
@@ -21,19 +28,19 @@ import { findLabourRate, minutesToHours } from "./labour";
 import { round2 } from "./material";
 
 export interface AppliedFeatures {
+  // Pre-margin: flow through margin pipeline
   material_lines: CostLine[];
   labour_lines: CostLine[];
   material_cost: number;
   labour_cost: number;
-  missing: string[];           // codes not found in library
-  errors: string[];            // labour rate missing etc.
+  // Post-margin: added directly to unit_price_ex_vat
+  post_margin_lines: CostLine[];
+  post_margin_cost: number;
+
+  missing: string[];
+  errors: string[];
 }
 
-/**
- * Compute the cost uplift from a set of feature choices and sub-component
- * choices. Returns separate material and labour line entries so the breakdown
- * can show the source.
- */
 export function applyFeatures(
   features: FeatureChoice[],
   subcomponents: SubcomponentChoice[],
@@ -46,11 +53,12 @@ export function applyFeatures(
     labour_lines: [],
     material_cost: 0,
     labour_cost: 0,
+    post_margin_lines: [],
+    post_margin_cost: 0,
     missing: [],
     errors: [],
   };
 
-  // Build code → entry lookup
   const featByCode = new Map<string, FeatureLibraryEntry>(
     library.features.map((f) => [f.code, f])
   );
@@ -78,6 +86,7 @@ export function applyFeatures(
 
   out.material_cost = round2(out.material_cost);
   out.labour_cost = round2(out.labour_cost);
+  out.post_margin_cost = round2(out.post_margin_cost);
   return out;
 }
 
@@ -89,21 +98,22 @@ function applyOne(
   company: CompanyCostingData,
   context: { finish: Finish }
 ) {
-  // If override_price set OR default_price set, treat as a flat sell price
-  // and split it back into "material" for display purposes only.
+  // If override_price set OR default_price set, treat as a CUSTOMER-FACING
+  // SELL PRICE that already includes any catalogue markup. Add directly to
+  // post_margin_cost so the engine doesn't apply margin to it again.
   const flat = override_price ?? entry.default_price;
   if (flat != null) {
-    const cost = round2(flat * quantity);
-    out.material_lines.push({
+    const sellAmount = round2(flat * quantity);
+    out.post_margin_lines.push({
       label: entry.name + (quantity > 1 ? ` × ${quantity}` : ""),
-      amount: cost,
-      detail: `Catalogue price`,
+      amount: sellAmount,
+      detail: `Catalogue sell price`,
     });
-    out.material_cost += cost;
+    out.post_margin_cost += sellAmount;
     return;
   }
 
-  // Else compute from material_cost + labour_minutes × hourly_rate
+  // Else compute from material_cost + labour_minutes (flows through margin)
   const material = round2(entry.material_cost * quantity);
   if (material > 0) {
     out.material_lines.push({

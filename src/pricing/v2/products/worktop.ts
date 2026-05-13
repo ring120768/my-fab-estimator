@@ -137,20 +137,21 @@ export function calculateWorktop(input: WorktopInputs): LineItemResult {
   const total_cost_per_unit = round2(build_cost_per_unit + overhead_cost_per_unit);
 
   const pct = rules.default_margin_percentage / 100;
-  let unit_price_ex_vat: number;
+  let pre_margin_sell: number;
   if (input.unit_price_override != null) {
-    unit_price_ex_vat = input.unit_price_override;
+    pre_margin_sell = input.unit_price_override;
     assumptions.push("Unit price manually overridden.");
   } else if (rules.pricing_method === "markup") {
-    unit_price_ex_vat = total_cost_per_unit * (1 + pct);
+    pre_margin_sell = total_cost_per_unit * (1 + pct);
   } else {
     if (pct >= 1) {
       validation_errors.push("Margin must be < 100%.");
       return { ok: false, product_type: "worktop", description: "", breakdown: null,
         assumptions, missing_information, validation_errors };
     }
-    unit_price_ex_vat = total_cost_per_unit / (1 - pct);
+    pre_margin_sell = total_cost_per_unit / (1 - pct);
   }
+  let unit_price_ex_vat = pre_margin_sell + applied.post_margin_cost;
   if (rules.rounding_enabled) unit_price_ex_vat = roundToUnit(unit_price_ex_vat, rules.rounding_unit);
   unit_price_ex_vat = round2(unit_price_ex_vat);
   const line_total_ex_vat = round2(unit_price_ex_vat * quantity);
@@ -166,6 +167,8 @@ export function calculateWorktop(input: WorktopInputs): LineItemResult {
       overhead_cost_per_unit, total_cost_per_unit,
       pricing_method: rules.pricing_method,
       margin_or_markup_percentage: rules.default_margin_percentage,
+      post_margin_lines: applied.post_margin_lines,
+      post_margin_cost_per_unit: applied.post_margin_cost,
       unit_price_ex_vat, line_total_ex_vat,
     },
     assumptions, missing_information, validation_errors,

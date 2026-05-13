@@ -46,7 +46,7 @@ describe("calculateBench — wall_bench", () => {
     expect(r1.breakdown!.unit_price_ex_vat).toEqual(r2.breakdown!.unit_price_ex_vat);
   });
 
-  it("a wall bench with a sink bowl costs more than one without", () => {
+  it("a wall bench with a sink bowl costs more than one without (post-margin add-on)", () => {
     const noBowl = calculateBench({ spec: BASE_BENCH, features: [], subcomponents: [], quantity: 1, library: SAMPLE_LIBRARY, company: SAMPLE_COMPANY }).breakdown!;
     const withBowl = calculateBench({
       spec: BASE_BENCH,
@@ -56,8 +56,10 @@ describe("calculateBench — wall_bench", () => {
       library: SAMPLE_LIBRARY,
       company: SAMPLE_COMPANY,
     }).breakdown!;
-    expect(withBowl.unit_price_ex_vat).toBeGreaterThan(noBowl.unit_price_ex_vat);
-    expect(withBowl.material_cost_per_unit - noBowl.material_cost_per_unit).toBeCloseTo(434, 0);
+    // Catalogue items add to post_margin_cost — exact pass-through, no margin re-applied
+    expect(withBowl.post_margin_cost_per_unit - noBowl.post_margin_cost_per_unit).toBeCloseTo(434, 0);
+    expect(withBowl.unit_price_ex_vat - noBowl.unit_price_ex_vat).toBeCloseTo(434, 0);
+    expect(withBowl.material_cost_per_unit).toEqual(noBowl.material_cost_per_unit);
   });
 
   it("a mirror finish costs more than brushed (2× polishing labour)", () => {
@@ -120,7 +122,7 @@ describe("calculateWorktop", () => {
     expect(r.description.toLowerCase()).toContain("work top");
   });
 
-  it("a worktop with sink bowl + anti-drip edge costs more", () => {
+  it("a worktop with sink bowl + anti-drip edge costs more (post-margin pass-through)", () => {
     const plain = calculateWorktop({ spec: BASE, features: [], subcomponents: [], quantity: 1, library: SAMPLE_LIBRARY, company: SAMPLE_COMPANY }).breakdown!;
     const loaded = calculateWorktop({
       spec: BASE,
@@ -131,6 +133,9 @@ describe("calculateWorktop", () => {
       subcomponents: [], quantity: 1, library: SAMPLE_LIBRARY, company: SAMPLE_COMPANY,
     }).breakdown!;
     expect(loaded.unit_price_ex_vat).toBeGreaterThan(plain.unit_price_ex_vat);
+    // Catalogue features pass through directly: £434 + £240 = £674 added
+    expect(loaded.post_margin_cost_per_unit - plain.post_margin_cost_per_unit).toBeCloseTo(674, 0);
+    expect(loaded.unit_price_ex_vat - plain.unit_price_ex_vat).toBeCloseTo(674, 0);
   });
 });
 
