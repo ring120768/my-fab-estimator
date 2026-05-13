@@ -147,15 +147,40 @@ export default function NewQuotePage() {
 
   const allOk = lines.length > 0 && lines.every((l) => l.result.ok);
 
+  const handleDiscard = () => {
+    const hasContent = lines.length > 0
+      || header.customer_name
+      || header.project_name
+      || header.customer_company
+      || header.customer_email
+      || header.internal_notes;
+    if (hasContent) {
+      const confirmed = window.confirm(
+        "Discard this draft quote?\n\n" +
+        "All line items and header data will be lost. This can't be undone."
+      );
+      if (!confirmed) return;
+    }
+    // Clear any imported schedule still in sessionStorage so it doesn't
+    // re-populate on next visit.
+    try { sessionStorage.removeItem(IMPORT_KEY); } catch { /* ignore */ }
+    router.push("/quotes");
+  };
+
   return (
     <div>
       <PageHeader
         title="New quote"
         description="Multi-line stainless steel fabrication quote. Add line items below — totals update live."
         actions={
-          <Button onClick={handleSave} disabled={!allOk || saving}>
-            {saving ? "Saving…" : "Save quote"}
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={handleDiscard} variant="secondary">
+              Discard draft
+            </Button>
+            <Button onClick={handleSave} disabled={!allOk || saving}>
+              {saving ? "Saving…" : "Save quote"}
+            </Button>
+          </div>
         }
       />
 
