@@ -108,19 +108,28 @@ export async function GET() {
     fix_label: materialOk ? undefined : "Open costing matrix",
   });
 
-  // 5. Costing rules
-  const { data: rules } = await supabase
+  // 5. Costing rules — Postgres numeric returns as string, parse explicitly.
+  const { data: rules, error: rulesErr } = await supabase
     .from("costing_rules")
-    .select("default_margin_percentage, vat_rate")
+    .select("default_margin_percentage, vat_rate, pricing_method")
     .eq("company_id", company_id)
     .maybeSingle();
-  const rulesOk = Boolean(rules && rules.default_margin_percentage > 0);
+  const marginNum = rules ? Number(rules.default_margin_percentage) : 0;
+  const rulesOk = !rulesErr && rules !== null && Number.isFinite(marginNum) && marginNum > 0;
+  let rulesDetail: string;
+  if (rulesOk) {
+    rulesDetail = `Default margin ${marginNum}% (${rules!.pricing_method}), VAT ${Number(rules!.vat_rate)}%.`;
+  } else if (rulesErr) {
+    rulesDetail = `Could not read costing_rules row: ${rulesErr.message}.`;
+  } else if (!rules) {
+    rulesDetail = `No costing_rules row found for company ${company_id.slice(0, 8)}. Open the costing matrix, set a default margin, and click Save changes.`;
+  } else {
+    rulesDetail = `Found rules row but default_margin_percentage is ${JSON.stringify(rules.default_margin_percentage)} — engine can't compute sell prices with this. Open the costing matrix and set a positive value.`;
+  }
   checks.push({
     ok: rulesOk,
     label: "Costing rules set",
-    detail: rulesOk
-      ? `Default margin ${rules!.default_margin_percentage}%, VAT ${rules!.vat_rate}%.`
-      : "Default margin not set — engine can't compute sell prices.",
+    detail: rulesDetail,
     fix_link: rulesOk ? undefined : "/costing-matrix#default-margin",
     fix_label: rulesOk ? undefined : "Set default margin →",
   });
