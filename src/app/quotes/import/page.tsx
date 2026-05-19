@@ -478,6 +478,18 @@ function LineRow({ item }: { item: ParsedLineItem }) {
             ⚠ no dimensions — defaults will apply, please verify
           </div>
         )}
+        {item.is_bought_in_equipment && item.catalogue_match && (
+          <div className="text-[11px] mt-1 text-ok">
+            ✓ matched catalogue: <span className="font-medium">{item.catalogue_match.manufacturer} {item.catalogue_match.model}</span>
+            {item.catalogue_match.stock_code && <span className="text-muted"> · {item.catalogue_match.stock_code}</span>}
+            <span className="text-muted"> · £{item.catalogue_match.list_price.toFixed(2)} less {item.catalogue_match.supplier_discount_pct}%</span>
+          </div>
+        )}
+        {item.is_bought_in_equipment && !item.catalogue_match && (
+          <div className="text-[11px] text-warn mt-1">
+            ⚠ not in catalogue — estimator will need to set a price
+          </div>
+        )}
       </td>
       <td className="py-2 pr-3 text-right">
         <span className={`tabular-nums font-medium ${

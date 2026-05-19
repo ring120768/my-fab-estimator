@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/server";
 import { SCHEDULE_PARSER_PROMPT } from "@/lib/ai/prompt";
 import { assessQuality } from "@/lib/ai/quality";
 import { pickProvider } from "@/lib/ai/providers";
+import { enrichWithCatalogueMatches } from "@/lib/ai/catalogue-match";
 import type { ParsedSchedule, ParseResult } from "@/lib/ai/types";
 
 export const runtime = "nodejs";
@@ -99,11 +100,24 @@ export async function POST(request: Request) {
   parsed.missing_required_info = Array.isArray(parsed.missing_required_info) ? parsed.missing_required_info : [];
   parsed.raw_confidence = typeof parsed.raw_confidence === "number" ? parsed.raw_confidence : 0;
 
+  // Enrich bought-in lines with catalogue matches before quality scoring,
+  // so the score (and the client) reflect what we can auto-price. Failures
+  // here are non-fatal — fall back to the unenriched schedule.
+  const { data: cu } = await supabase
+    .from("company_users")
+    .select("company_id")
+    .eq("user_id", user.id)
+    .limit(1)
+    .single();
+  const enriched = cu?.company_id
+    ? await enrichWithCatalogueMatches(supabase, cu.company_id, parsed).catch(() => parsed)
+    : parsed;
+
   // Quality assessment (provider-agnostic)
-  const assessment = assessQuality(parsed);
+  const assessment = assessQuality(enriched);
   const result: ParseResult = {
     ok: assessment.acceptable,
-    schedule: parsed,
+    schedule: enriched,
     assessment,
   };
 

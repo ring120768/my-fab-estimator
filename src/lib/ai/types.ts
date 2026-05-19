@@ -62,6 +62,20 @@ export interface ParsedLineItem {
   // Per-item confidence + missing fields
   confidence: number;            // 0-100
   missing_fields: string[];      // human-readable list of what's not in the source
+
+  // ---- Server-side enrichment (added after AI parse, not from the AI) ----
+  // If the line is bought-in and we matched it against the equipment_catalogue
+  // table, this is populated with the canonical price + discount from there.
+  // The import mapper uses these in preference to AI's suggested_* fields.
+  catalogue_match?: {
+    catalogue_id: string;
+    stock_code: string | null;
+    manufacturer: string;             // canonical name from catalogue
+    model: string;                    // canonical model
+    list_price: number;
+    supplier_discount_pct: number;
+    match_method: "stock_code" | "exact" | "normalized";
+  };
 }
 
 export interface ParsedSchedule {

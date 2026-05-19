@@ -111,14 +111,21 @@ function toLineItemInput(item: ParsedLineItem): LineItemInput {
 
   // ----- BOUGHT-IN EQUIPMENT -----
   if (item.is_bought_in_equipment) {
+    // Prefer the canonical catalogue match (set server-side post-parse) over
+    // whatever the AI suggested. Falls back to AI suggestions if no match.
+    const cm = item.catalogue_match;
+    const listPrice = cm
+      ? cm.list_price
+      : (item.suggested_supplier_list_price ?? 0);
+    const discountPct = cm ? cm.supplier_discount_pct : 0;
     return {
       spec: {
         product_type: "bought_in",
         description: item.description,
-        manufacturer: item.manufacturer,
-        model: item.model,
-        supplier_list_price: item.suggested_supplier_list_price ?? 0,
-        supplier_discount_pct: 0, // estimator fills in
+        manufacturer: cm?.manufacturer ?? item.manufacturer,
+        model: cm?.model ?? item.model,
+        supplier_list_price: listPrice,
+        supplier_discount_pct: discountPct,
         markup_pct: 15,            // sensible default; estimator can adjust
       },
       features: [],
