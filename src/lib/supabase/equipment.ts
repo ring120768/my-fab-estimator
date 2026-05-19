@@ -4,6 +4,9 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 
 export interface EquipmentRow {
   id: string;
+  // CCE-style stock code, e.g. "RAT1-E00055-AC". Optional — older items
+  // seeded before migration 0010 won't have one.
+  stock_code: string | null;
   manufacturer: string;
   model: string;
   description: string | null;
@@ -15,6 +18,10 @@ export interface EquipmentRow {
   install_hours_eng: number;
   install_hours_asst: number;
   install_hours_foreman: number;
+  // Traceability — last quote reference and date this item was sold on.
+  // Surfaces "this price was last quoted Jan 2026" for the estimator.
+  last_quote_ref: string | null;
+  last_quote_date: string | null;
   active: boolean;
 }
 
@@ -33,7 +40,7 @@ export async function listEquipment(
 ): Promise<EquipmentRow[]> {
   let q = supabase
     .from("equipment_catalogue")
-    .select("id, manufacturer, model, description, category, list_price, cost_notes, default_supplier_discount_pct, default_markup_pct, install_hours_eng, install_hours_asst, install_hours_foreman, active")
+    .select("id, stock_code, manufacturer, model, description, category, list_price, cost_notes, default_supplier_discount_pct, default_markup_pct, install_hours_eng, install_hours_asst, install_hours_foreman, last_quote_ref, last_quote_date, active")
     .eq("company_id", company_id)
     .eq("active", true)
     .order("manufacturer")
@@ -45,6 +52,7 @@ export async function listEquipment(
   const { data } = await q;
   return (data ?? []).map((r) => ({
     id: r.id,
+    stock_code: r.stock_code ?? null,
     manufacturer: r.manufacturer,
     model: r.model,
     description: r.description,
@@ -55,6 +63,8 @@ export async function listEquipment(
     default_markup_pct: r.default_markup_pct == null ? null : Number(r.default_markup_pct),
     install_hours_eng: Number(r.install_hours_eng),
     install_hours_asst: Number(r.install_hours_asst),
+    last_quote_ref: r.last_quote_ref ?? null,
+    last_quote_date: r.last_quote_date ?? null,
     install_hours_foreman: Number(r.install_hours_foreman),
     active: r.active,
   }));
