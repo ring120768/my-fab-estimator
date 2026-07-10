@@ -10,7 +10,7 @@ export const anthropicProvider: AIProvider = {
   model: MODEL,
   is_configured: () => Boolean(process.env.ANTHROPIC_API_KEY),
 
-  async parse_schedule(pdf_bytes, filename, system_prompt) {
+  async parse_document(pdf_bytes, filename, system_prompt) {
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) throw new Error("ANTHROPIC_API_KEY is not set.");
 

@@ -8,7 +8,10 @@ import { SCHEDULE_PARSER_PROMPT } from "@/lib/ai/prompt";
 import { assessQuality } from "@/lib/ai/quality";
 import { pickProvider } from "@/lib/ai/providers";
 import { enrichWithCatalogueMatches } from "@/lib/ai/catalogue-match";
+import { mergeDrawingDimensions } from "@/lib/ai/merge-drawing-dims";
+import { DRAWING_DIMENSION_PROMPT } from "@/lib/drawing/prompt";
 import type { ParsedSchedule, ParseResult } from "@/lib/ai/types";
+import type { ParsedDrawing } from "@/lib/drawing/types";
 
 export const runtime = "nodejs";
 export const maxDuration = 120;
@@ -69,7 +72,7 @@ export async function POST(request: Request) {
   // Call the AI provider
   let aiContent: string;
   try {
-    aiContent = await provider.parse_schedule(fileBytes, filename, SCHEDULE_PARSER_PROMPT);
+    aiContent = await provider.parse_document(fileBytes, filename, SCHEDULE_PARSER_PROMPT);
   } catch (e) {
     return failureResponse(
       `AI provider (${provider.name}) failed.`,
@@ -100,18 +103,31 @@ export async function POST(request: Request) {
   parsed.missing_required_info = Array.isArray(parsed.missing_required_info) ? parsed.missing_required_info : [];
   parsed.raw_confidence = typeof parsed.raw_confidence === "number" ? parsed.raw_confidence : 0;
 
-  // Enrich bought-in lines with catalogue matches before quality scoring,
-  // so the score (and the client) reflect what we can auto-price. Failures
-  // here are non-fatal — fall back to the unenriched schedule.
+  // Enrich bought-in lines with catalogue matches. Failures are non-fatal.
   const { data: cu } = await supabase
     .from("company_users")
     .select("company_id")
     .eq("user_id", user.id)
     .limit(1)
     .single();
-  const enriched = cu?.company_id
+  let enriched = cu?.company_id
     ? await enrichWithCatalogueMatches(supabase, cu.company_id, parsed).catch(() => parsed)
     : parsed;
+
+  // Second AI pass: read dimension annotations off the drawing itself and
+  // merge them into the schedule by item_no. Doubles the AI call cost per
+  // import but removes the "Charlie must add dims to the schedule" ask.
+  // Fails soft — if the drawing parse errors, keep the schedule-only result.
+  try {
+    const drawingRaw = await provider.parse_document(fileBytes, filename, DRAWING_DIMENSION_PROMPT);
+    const drawingParsed = JSON.parse(drawingRaw) as ParsedDrawing;
+    drawingParsed.items = Array.isArray(drawingParsed.items) ? drawingParsed.items : [];
+    if (drawingParsed.items.length > 0) {
+      enriched = mergeDrawingDimensions(enriched, drawingParsed);
+    }
+  } catch {
+    // Non-fatal — schedule-only result stands.
+  }
 
   // Quality assessment (provider-agnostic)
   const assessment = assessQuality(enriched);

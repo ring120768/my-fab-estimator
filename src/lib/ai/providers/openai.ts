@@ -8,7 +8,7 @@ export const openaiProvider: AIProvider = {
   model: MODEL,
   is_configured: () => Boolean(process.env.OPENAI_API_KEY),
 
-  async parse_schedule(pdf_bytes, filename, system_prompt) {
+  async parse_document(pdf_bytes, filename, system_prompt) {
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) throw new Error("OPENAI_API_KEY is not set.");
 
